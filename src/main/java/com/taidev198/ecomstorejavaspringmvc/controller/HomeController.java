@@ -1,4 +1,4 @@
-package com.taidev198.javabackendspringmvc.controller;
+package com.taidev198.ecomstorejavaspringmvc.controller;
 
 
 import org.springframework.stereotype.Controller;
