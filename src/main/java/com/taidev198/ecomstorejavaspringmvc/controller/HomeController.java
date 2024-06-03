@@ -18,7 +18,7 @@ public class HomeController {
     public ModelAndView home(){
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("user/index");
-        modelAndView.addObject("slide", slideDAO.getSlides());
+        modelAndView.addObject("slides", slideDAO.getSlides());
         return modelAndView;
     }
 
