@@ -16,5 +16,12 @@ public class HomeController {
         return modelAndView;
     }
 
+    @RequestMapping(value = {"/product"}, method = RequestMethod.GET)
+    public ModelAndView product(){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("user/product");
+        return modelAndView;
+    }
+
 
 }
