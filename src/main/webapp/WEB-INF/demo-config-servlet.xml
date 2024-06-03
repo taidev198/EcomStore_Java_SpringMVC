@@ -15,3 +15,4 @@
         <property name = "suffix" value = ".jsp"/>
     </bean>
 </beans>
+        <!--this files name must have same of name is declared on web.xml -->

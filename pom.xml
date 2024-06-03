@@ -42,6 +42,26 @@
             <artifactId>spring-webmvc</artifactId>
             <version>6.1.8</version>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/opensymphony/sitemesh
+         to manage layout website
+         must 2.7.0-m1 to be runable-->
+        <dependency>
+            <groupId>opensymphony</groupId>
+            <artifactId>sitemesh</artifactId>
+            <version>2.7.0-M1</version>
+        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.sitemesh</groupId>-->
+<!--            <artifactId>sitemesh</artifactId>-->
+<!--            <version>3.2.1</version>-->
+<!--        </dependency>-->
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+            <version>7.0</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
     <build>
