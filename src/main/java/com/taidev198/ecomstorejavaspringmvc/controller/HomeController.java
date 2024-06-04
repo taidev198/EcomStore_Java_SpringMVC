@@ -20,6 +20,7 @@ public class HomeController {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("user/index");
         modelAndView.addObject("slides", homeService.getSlides());
+        modelAndView.addObject("categories", homeService.getCategories());
         return modelAndView;
     }
 
