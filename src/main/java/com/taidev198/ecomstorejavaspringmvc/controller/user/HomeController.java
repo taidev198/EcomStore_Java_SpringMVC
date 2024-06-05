@@ -1,7 +1,6 @@
-package com.taidev198.ecomstorejavaspringmvc.controller;
+package com.taidev198.ecomstorejavaspringmvc.controller.user;
 
 
-import com.taidev198.ecomstorejavaspringmvc.dao.SlideDAO;
 import com.taidev198.ecomstorejavaspringmvc.service.user.HomeServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

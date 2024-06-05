@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JavaScriptLibraryMappings">
-    <file url="file://$PROJECT_DIR$" libraries="{Category.v202405200340, OwlCarousel2, globalTGDD_V2.v202406031110, globalTGDD_V2.v202406031120, homeGTM_V2.v202404030330, homeTGDD_v2.v202406031120}" />
+    <file url="file://$PROJECT_DIR$" libraries="{Category.v202405200340, OwlCarousel2, buttons, globalTGDD_V2.v202406031110, globalTGDD_V2.v202406031120, homeGTM_V2.v202404030330, homeTGDD_v2.v202406031120}" />
   </component>
 </project>

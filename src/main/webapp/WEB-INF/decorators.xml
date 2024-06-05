@@ -5,7 +5,7 @@
     <decorator name="user" page="user.jsp"><!--        the url to filter to direct-->
         <pattern>/*</pattern>
     </decorator>
-    <decorator name="admin" page="admin.jsp">
+    <decorator name="admin" page="admin/admin_layout.jsp">
         <pattern>/admin*</pattern>
     </decorator>
 </decorators>
