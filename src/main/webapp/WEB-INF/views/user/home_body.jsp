@@ -18,11 +18,11 @@
             <div class="col-md-4 col-xs-6">
                 <div class="shop">
                     <div class="shop-img">
-                        <img src="<c:url value="/assets/user/img//shop01.png"/>" alt="">
+                        <img src="<c:url value="/assets/user/img/shop01.png"/>" alt="">
                     </div>
                     <div class="shop-body">
                         <h3>Laptop<br>Collection</h3>
-                        <a href="#" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
+                        <a href="<c:url value="/product"/>" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -32,7 +32,7 @@
             <div class="col-md-4 col-xs-6">
                 <div class="shop">
                     <div class="shop-img">
-                        <img src="<c:url value="/assets/user/img//shop03.png"/>" alt="">
+                        <img src="<c:url value="/assets/user/img/shop03.png"/>" alt="">
                     </div>
                     <div class="shop-body">
                         <h3>Accessories<br>Collection</h3>
@@ -46,7 +46,7 @@
             <div class="col-md-4 col-xs-6">
                 <div class="shop">
                     <div class="shop-img">
-                        <img src="<c:url value="/assets/user/img//shop02.png"/>" alt="">
+                        <img src="<c:url value="/assets/user/img/shop02.png"/>" alt="">
                     </div>
                     <div class="shop-body">
                         <h3>Cameras<br>Collection</h3>
@@ -95,7 +95,7 @@
                                 <!-- product -->
                                 <div class="product">
                                     <div class="product-img">
-                                        <img src="<c:url value="/assets/user/img//product01.png"/>" alt="">
+                                        <img src="<c:url value="/assets/user/img/product01.png"/>" alt="">
                                         <div class="product-label">
                                             <span class="sale">-30%</span>
                                             <span class="new">NEW</span>
@@ -127,7 +127,7 @@
                                 <!-- product -->
                                 <div class="product">
                                     <div class="product-img">
-                                        <img src="<c:url value="/assets/user/img//product02.png"/>" alt="">
+                                        <img src="<c:url value="/assets/user/img/product02.png"/>" alt="">
                                         <div class="product-label">
                                             <span class="new">NEW</span>
                                         </div>
@@ -158,7 +158,7 @@
                                 <!-- product -->
                                 <div class="product">
                                     <div class="product-img">
-                                        <img src="<c:url value="/assets/user/img//product03.png"/>" alt="">
+                                        <img src="<c:url value="/assets/user/img/product03.png"/>" alt="">
                                         <div class="product-label">
                                             <span class="sale">-30%</span>
                                         </div>
@@ -184,7 +184,7 @@
                                 <!-- product -->
                                 <div class="product">
                                     <div class="product-img">
-                                        <img src="<c:url value="/assets/user/img//product04.png"/>" alt="">
+                                        <img src="<c:url value="/assets/user/img/product04.png"/>" alt="">
                                     </div>
                                     <div class="product-body">
                                         <p class="product-category">Category</p>
@@ -212,7 +212,7 @@
                                 <!-- product -->
                                 <div class="product">
                                     <div class="product-img">
-                                        <img src="<c:url value="/assets/user/img//product05.png"/>" alt="">
+                                        <img src="<c:url value="/assets/user/img/product05.png"/>" alt="">
                                     </div>
                                     <div class="product-body">
                                         <p class="product-category">Category</p>
@@ -330,7 +330,7 @@
                                 <!-- product -->
                                 <div class="product">
                                     <div class="product-img">
-                                        <img src="<c:url value="/assets/user/img//product06.png"/>" alt="">
+                                        <img src="<c:url value="/assets/user/img/product06.png"/>" alt="">
                                         <div class="product-label">
                                             <span class="sale">-30%</span>
                                             <span class="new">NEW</span>
@@ -362,7 +362,7 @@
                                 <!-- product -->
                                 <div class="product">
                                     <div class="product-img">
-                                        <img src="<c:url value="/assets/user/img//product07.png"/>" alt="">
+                                        <img src="<c:url value="/assets/user/img/product07.png"/>" alt="">
                                         <div class="product-label">
                                             <span class="new">NEW</span>
                                         </div>
@@ -393,7 +393,7 @@
                                 <!-- product -->
                                 <div class="product">
                                     <div class="product-img">
-                                        <img src="<c:url value="/assets/user/img//product08.png"/>" alt="">
+                                        <img src="<c:url value="/assets/user/img/product08.png"/>" alt="">
                                         <div class="product-label">
                                             <span class="sale">-30%</span>
                                         </div>
@@ -419,7 +419,7 @@
                                 <!-- product -->
                                 <div class="product">
                                     <div class="product-img">
-                                        <img src="<c:url value="/assets/user/img//product09.png"/>" alt="">
+                                        <img src="<c:url value="/assets/user/img/product09.png"/>" alt="">
                                     </div>
                                     <div class="product-body">
                                         <p class="product-category">Category</p>
@@ -447,7 +447,7 @@
                                 <!-- product -->
                                 <div class="product">
                                     <div class="product-img">
-                                        <img src="<c:url value="/assets/user/img//product01.png"/>" alt="">
+                                        <img src="<c:url value="/assets/user/img/product01.png"/>" alt="">
                                     </div>
                                     <div class="product-body">
                                         <p class="product-category">Category</p>
@@ -505,7 +505,7 @@
                         <!-- product widget -->
                         <div class="product-widget">
                             <div class="product-img">
-                                <img src="<c:url value="/assets/user/img//product07.png"/>" alt="">
+                                <img src="<c:url value="/assets/user/img/product07.png"/>" alt="">
                             </div>
                             <div class="product-body">
                                 <p class="product-category">Category</p>
@@ -518,7 +518,7 @@
                         <!-- product widget -->
                         <div class="product-widget">
                             <div class="product-img">
-                                <img src="<c:url value="/assets/user/img//product08.png"/>" alt="">
+                                <img src="<c:url value="/assets/user/img/product08.png"/>" alt="">
                             </div>
                             <div class="product-body">
                                 <p class="product-category">Category</p>
@@ -531,7 +531,7 @@
                         <!-- product widget -->
                         <div class="product-widget">
                             <div class="product-img">
-                                <img src="<c:url value="/assets/user/img//product09.png"/>" alt="">
+                                <img src="<c:url value="/assets/user/img/product09.png"/>" alt="">
                             </div>
                             <div class="product-body">
                                 <p class="product-category">Category</p>
@@ -546,7 +546,7 @@
                         <!-- product widget -->
                         <div class="product-widget">
                             <div class="product-img">
-                                <img src="<c:url value="/assets/user/img//product01.png"/>" alt="">
+                                <img src="<c:url value="/assets/user/img/product01.png"/>" alt="">
                             </div>
                             <div class="product-body">
                                 <p class="product-category">Category</p>
@@ -559,7 +559,7 @@
                         <!-- product widget -->
                         <div class="product-widget">
                             <div class="product-img">
-                                <img src="<c:url value="/assets/user/img//product02.png"/>" alt="">
+                                <img src="<c:url value="/assets/user/img/product02.png"/>" alt="">
                             </div>
                             <div class="product-body">
                                 <p class="product-category">Category</p>
@@ -572,7 +572,7 @@
                         <!-- product widget -->
                         <div class="product-widget">
                             <div class="product-img">
-                                <img src="<c:url value="/assets/user/img//product03.png"/>" alt="">
+                                <img src="<c:url value="/assets/user/img/product03.png"/>" alt="">
                             </div>
                             <div class="product-body">
                                 <p class="product-category">Category</p>
@@ -598,7 +598,7 @@
                         <!-- product widget -->
                         <div class="product-widget">
                             <div class="product-img">
-                                <img src="<c:url value="/assets/user/img//product04.png"/>" alt="">
+                                <img src="<c:url value="/assets/user/img/product04.png"/>" alt="">
                             </div>
                             <div class="product-body">
                                 <p class="product-category">Category</p>
@@ -611,7 +611,7 @@
                         <!-- product widget -->
                         <div class="product-widget">
                             <div class="product-img">
-                                <img src="<c:url value="/assets/user/img//product05.png"/>" alt="">
+                                <img src="<c:url value="/assets/user/img/product05.png"/>" alt="">
                             </div>
                             <div class="product-body">
                                 <p class="product-category">Category</p>
@@ -624,7 +624,7 @@
                         <!-- product widget -->
                         <div class="product-widget">
                             <div class="product-img">
-                                <img src="<c:url value="/assets/user/img//product06.png"/>" alt="">
+                                <img src="<c:url value="/assets/user/img/product06.png"/>" alt="">
                             </div>
                             <div class="product-body">
                                 <p class="product-category">Category</p>
@@ -639,7 +639,7 @@
                         <!-- product widget -->
                         <div class="product-widget">
                             <div class="product-img">
-                                <img src="<c:url value="/assets/user/img//product07.png"/>" alt="">
+                                <img src="<c:url value="/assets/user/img/product07.png"/>" alt="">
                             </div>
                             <div class="product-body">
                                 <p class="product-category">Category</p>
@@ -652,7 +652,7 @@
                         <!-- product widget -->
                         <div class="product-widget">
                             <div class="product-img">
-                                <img src="<c:url value="/assets/user/img//product08.png"/>" alt="">
+                                <img src="<c:url value="/assets/user/img/product08.png"/>" alt="">
                             </div>
                             <div class="product-body">
                                 <p class="product-category">Category</p>
@@ -665,7 +665,7 @@
                         <!-- product widget -->
                         <div class="product-widget">
                             <div class="product-img">
-                                <img src="<c:url value="/assets/user/img//product09.png"/>" alt="">
+                                <img src="<c:url value="/assets/user/img/product09.png"/>" alt="">
                             </div>
                             <div class="product-body">
                                 <p class="product-category">Category</p>
@@ -693,7 +693,7 @@
                         <!-- product widget -->
                         <div class="product-widget">
                             <div class="product-img">
-                                <img src="<c:url value="/assets/user/img//product01.png"/>" alt="">
+                                <img src="<c:url value="/assets/user/img/product01.png"/>" alt="">
                             </div>
                             <div class="product-body">
                                 <p class="product-category">Category</p>
@@ -706,7 +706,7 @@
                         <!-- product widget -->
                         <div class="product-widget">
                             <div class="product-img">
-                                <img src="<c:url value="/assets/user/img//product02.png"/>" alt="">
+                                <img src="<c:url value="/assets/user/img/product02.png"/>" alt="">
                             </div>
                             <div class="product-body">
                                 <p class="product-category">Category</p>
@@ -719,7 +719,7 @@
                         <!-- product widget -->
                         <div class="product-widget">
                             <div class="product-img">
-                                <img src="<c:url value="/assets/user/img//product03.png"/>" alt="">
+                                <img src="<c:url value="/assets/user/img/product03.png"/>" alt="">
                             </div>
                             <div class="product-body">
                                 <p class="product-category">Category</p>
@@ -734,7 +734,7 @@
                         <!-- product widget -->
                         <div class="product-widget">
                             <div class="product-img">
-                                <img src="<c:url value="/assets/user/img//product04.png"/>" alt="">
+                                <img src="<c:url value="/assets/user/img/product04.png"/>" alt="">
                             </div>
                             <div class="product-body">
                                 <p class="product-category">Category</p>
@@ -747,7 +747,7 @@
                         <!-- product widget -->
                         <div class="product-widget">
                             <div class="product-img">
-                                <img src="<c:url value="/assets/user/img//product05.png"/>" alt="">
+                                <img src="<c:url value="/assets/user/img/product05.png"/>" alt="">
                             </div>
                             <div class="product-body">
                                 <p class="product-category">Category</p>
@@ -760,7 +760,7 @@
                         <!-- product widget -->
                         <div class="product-widget">
                             <div class="product-img">
-                                <img src="<c:url value="/assets/user/img//product06.png"/>" alt="">
+                                <img src="<c:url value="/assets/user/img/product06.png"/>" alt="">
                             </div>
                             <div class="product-body">
                                 <p class="product-category">Category</p>
@@ -779,39 +779,3 @@
     <!-- /container -->
 </div>
 <!-- /SECTION -->
-
-<!-- NEWSLETTER -->
-<div id="newsletter" class="section">
-    <!-- container -->
-    <div class="container">
-        <!-- row -->
-        <div class="row">
-            <div class="col-md-12">
-                <div class="newsletter">
-                    <p>Sign Up for the <strong>NEWSLETTER</strong></p>
-                    <form>
-                        <input class="input" type="email" placeholder="Enter Your Email">
-                        <button class="newsletter-btn"><i class="fa fa-envelope"></i> Subscribe</button>
-                    </form>
-                    <ul class="newsletter-follow">
-                        <li>
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-pinterest"></i></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <!-- /row -->
-    </div>
-    <!-- /container -->
-</div>
-<!-- /NEWSLETTER -->
