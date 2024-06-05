@@ -16,4 +16,9 @@ public class AdminController {
     public String profileDetailsAdmin(){
         return "admin/profile_details_admin";
     }
+
+    @RequestMapping(value = "/admin-list-users")
+    public String listUsersAdmin(){
+        return "admin/list_users_admin";
+    }
 }
