@@ -5,6 +5,7 @@
         <!--    <pattern>/404-page.html</pattern>-->
         <pattern>/login</pattern>
         <pattern>/register</pattern>
+        <pattern>/reset-password</pattern>
         <!--    <pattern>/dang-nhap.html</pattern>-->
 
     </excludes>    <!--    filter what is users layout or admins layout-->
