@@ -11,4 +11,9 @@ public class AdminController {
     public String index() {
         return "admin/index_body";
     }
+
+    @RequestMapping(value = "admin-profile-details")
+    public String profileDetailsAdmin(){
+        return "admin/profile_details_admin";
+    }
 }

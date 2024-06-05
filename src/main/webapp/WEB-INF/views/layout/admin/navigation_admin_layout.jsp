@@ -10,7 +10,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
     <div class="app-brand demo">
-        <a href="index.html" class="app-brand-link">
+        <a href="<c:url value="admin"/>" class="app-brand-link">
               <span class="app-brand-logo demo me-1">
                 <span style="color: var(--bs-primary)">
                   <svg width="30" height="24" viewBox="0 0 250 196" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -93,7 +93,7 @@
             </a>
             <ul class="menu-sub">
                 <li class="menu-item active">
-                    <a href="index.html" class="menu-link">
+                    <a href="<c:url value="admin"/> " class="menu-link">
                         <div data-i18n="Analytics">Analytics</div>
                     </a>
                 </li>
@@ -148,7 +148,7 @@
             </a>
             <ul class="menu-sub">
                 <li class="menu-item">
-                    <a href="pages-account-settings-account.html" class="menu-link">
+                    <a href="<c:url value="admin-profile-details"/>" class="menu-link">
                         <div data-i18n="Account">Account</div>
                     </a>
                 </li>

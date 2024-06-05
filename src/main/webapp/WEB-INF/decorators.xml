@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!--direct folder to load layout manager-->
 <decorators defaultdir="/WEB-INF/views/layout/">
-    <!--    filter what is users layout or admins layout-->
+    <excludes >
+        <!--    <pattern>/404-page.html</pattern>-->
+        <pattern>/login</pattern>
+        <pattern>/register</pattern>
+        <!--    <pattern>/dang-nhap.html</pattern>-->
+
+    </excludes>    <!--    filter what is users layout or admins layout-->
     <decorator name="user" page="user.jsp"><!--        the url to filter to direct-->
-        <pattern>/trang-chu*</pattern>
+        <pattern>/*</pattern>
     </decorator>
     <decorator name="admin" page="admin/admin_layout.jsp">
         <pattern>/admin*</pattern>

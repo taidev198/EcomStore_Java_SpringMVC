@@ -885,7 +885,7 @@
                         </div>
                     </div>
                 </div>
-                <!--/ Data Tables -->
+                <!-- Data Tables -->
             </div>
         </div>
-        <!-- / Content -->
+        <!--  Content -->
