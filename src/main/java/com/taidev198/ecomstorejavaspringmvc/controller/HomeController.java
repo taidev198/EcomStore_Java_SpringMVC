@@ -18,7 +18,7 @@ public class HomeController {
     @RequestMapping(value = {"/","/trang-chu"}, method = RequestMethod.GET)
     public ModelAndView home(){
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("user/index");
+        modelAndView.setViewName("user/home_body");
         modelAndView.addObject("slides", homeService.getSlides());
         modelAndView.addObject("categories", homeService.getCategories());
         return modelAndView;
@@ -27,7 +27,7 @@ public class HomeController {
     @RequestMapping(value = {"/product"}, method = RequestMethod.GET)
     public ModelAndView product(){
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("user/product");
+        modelAndView.setViewName("user/product_body");
         return modelAndView;
     }
 

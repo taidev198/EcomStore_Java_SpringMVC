@@ -8,52 +8,60 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://www.opensymphony.com/sitemesh/decorator"  prefix="decorator"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
-<html lang="vi-VN">
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
+    <title>Electro - HTML Ecommerce Template</title>
 
-    <title>Thegioididong.com - Điện thoại, Laptop, Phụ kiện, Đồng hồ chính hãng</title>
-    <meta name="keywords" content="Thế giới di động, Thegioididong, điện thoại di động, dtdd, smartphone, tablet, máy tính bảng, laptop, máy tính xách tay, phụ kiện, smartwatch, đồng hồ, tin công nghệ">
-    <meta name="description" content="Hệ thống bán lẻ điện thoại di động, smartphone, máy tính bảng, tablet, laptop, phụ kiện, smartwatch, đồng hồ chính hãng mới nhất, giá tốt, dịch vụ khách hàng được yêu thích nhất VN">
-    <meta property="og:title" content="Thegioididong.com - Điện thoại, Laptop, Phụ kiện, Đồng hồ chính hãng">
-    <meta property="og:description" content="Hệ thống bán lẻ điện thoại di động, smartphone, máy tính bảng, tablet, laptop, phụ kiện, smartwatch, đồng hồ chính hãng mới nhất, giá tốt, dịch vụ khách hàng được yêu thích nhất VN">
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
 
+    <!-- Bootstrap -->
+    <link type="text/css" rel="stylesheet" href="<c:url value="/assets/user/css/bootstrap.min.css"/>"/>
 
-    <meta content="INDEX,FOLLOW" name="robots">
-    <meta name="viewport" content="width=device-width">
-    <meta name="copyright" content="Công ty Cổ phần Thế Giới Di Động">
-    <meta name="author" content="Công ty Cổ phần Thế Giới Di Động">
-    <meta http-equiv="audience" content="General">
-    <meta name="resource-type" content="Document">
-    <meta name="distribution" content="Global">
-    <meta name="revisit-after" content="1 days">
-    <meta name="GENERATOR" content="Công ty Cổ phần Thế Giới Di Động">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <link href="/favicon_TGDD.ico" rel="shortcut icon" type="image/x-icon">
-    <link href="/favicon_TGDD.ico" rel="apple-touch-icon">
-    <link href="/favicon_TGDD.ico" rel="apple-touch-icon-precomposed">
-    <meta property="og:site_name" content="Thegioididong.com">
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="vi_VN">
-    <meta property="fb:pages" content="214993791879039">
-    <meta http-equiv="x-dns-prefetch-control" content="on">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/web/assets/css/styles.css">
+    <!-- Slick -->
+    <link type="text/css" rel="stylesheet" href="<c:url value="/assets/user/css/slick.css"/>"/>
+    <link type="text/css" rel="stylesheet" href="<c:url value="/assets/user/css/slick-theme.css"/>"/>
+
+    <!-- nouislider -->
+    <link type="text/css" rel="stylesheet" href="<c:url value="/assets/user/css/nouislider.min.css"/>"/>
+
+    <!-- Font Awesome Icon -->
+    <link rel="stylesheet" href="<c:url value="/assets/user/css/font-awesome.min.css"/>">
+
+    <!-- Custom stlylesheet -->
+    <link type="text/css" rel="stylesheet" href="<c:url value="/assets/user/css/style.css"/>"/>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"/>"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"/>"></script>
+    <![endif]-->
+
 </head>
 <body>
+
 <%@include file="/WEB-INF/views/layout/user/header.jsp"%>
+
 <decorator:body/>
-<%@include file="/WEB-INF/views/layout/user/header.jsp"%>
+
+<%@include file="/WEB-INF/views/layout/user/footer.jsp"%>
+
+
+
+<!-- jQuery Plugins -->
+<script src="<c:url value="/assets/user/js/jquery.min.js"/>"></script>
+<script src="<c:url value="/assets/user/js/bootstrap.min.js"/>"></script>
+<script src="<c:url value="/assets/user/js/slick.min.js"/>"></script>
+<script src="<c:url value="/assets/user/js/nouislider.min.js"/>"></script>
+<script src="<c:url value="/assets/user/js/jquery.zoom.min.js"/>"></script>
+<script src="<c:url value="/assets/user/js/main.js"/>"></script>
 
 </body>
 </html>
-<script>
-    var isMobile = false;
-    function LoadViewedHistory(){}
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-<script src="/assets/web/assets/js/homeTGDD.min.v202106210950.js"></script>

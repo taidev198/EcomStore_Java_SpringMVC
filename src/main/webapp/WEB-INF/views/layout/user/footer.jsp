@@ -7,90 +7,98 @@
 --%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<footer class="footer">
-    <section class="clearfix footer__top">
-        <div class="footer__col">
-            <ul class="f-listmenu">
-                <li><a rel="nofollow" href="/lich-su-mua-hang">Lịch sử mua hàng</a></li>
-                <li><a rel="nofollow" href="/daily">Cộng tác bán hàng cùng TGDĐ</a></li>
-                <li><a rel="nofollow" href="/tra-gop">Tìm hiểu về mua trả góp</a></li>
-                <li><a rel="nofollow" href="/bao-hanh">Chính sách bảo hành</a></li>
-                <li><a href="javascript:void(0)" class="arrow showtaga">Xem thêm</a></li>
-                <li class="hidden"><a rel="nofollow" href="/chinh-sach-bao-hanh-san-pham">Chính sách đổi trả</a></li>
-                <li class="hidden"><a rel="nofollow" href="/giao-hang">Giao hàng &amp; Thanh toán</a></li>
-                <li class="hidden"><a rel="nofollow" href="/huong-dan-mua-hang">Hướng dẫn mua online</a></li>
-                <li class="hidden"><a rel="nofollow" href="/b2b">Bán hàng doanh nghiệp</a></li>
-                <li class="hidden"><a rel="nofollow" href="/phieu-mua-hang">Phiếu mua hàng</a></li>
-                <li class="hidden"><a rel="nofollow" href="http://hddt.thegioididong.com">In hóa đơn điện tử</a></li>
-                <li class="hidden"><a rel="nofollow" href="/tos">Quy chế hoạt động</a></li>
-                <li class="hidden"><a rel="nofollow" href="/noi-quy-cua-hang">Nội quy cửa hàng</a></li>
-                <li class="hidden"><a rel="nofollow" href="/chat-luong-phuc-vu">Chất lượng phục vụ</a></li>
-                <li class="hidden"><a rel="nofollow" href="/tin-tuc/can-trong-voi-nhung-sieu-thi-thegioididong-khong-chinh-chu--683321">Cảnh báo giả mạo</a></li>
-                <li class="hidden"><a rel="nofollow" href="/chinh-sach-khui-hop-apple">Chính sách khui hộp sản phẩm Apple</a></li>
-            </ul>
-        </div>
-        <div class="footer__col">
-            <ul class="f-listmenu">
-                <li><a rel="nofollow" href="http://mwg.vn">Giới thiệu công ty (MWG.vn)</a></li>
-                <li><a rel="nofollow" href="http://vieclam.thegioididong.com">Tuyển dụng</a></li>
-                <li><a rel="nofollow" href="/lien-he">Gửi góp ý, khiếu nại</a></li>
-                <li><a rel="nofollow" href="/he-thong-sieu-thi-the-gioi-di-dong">Tìm siêu thị (2.259 shop)</a></li>
-                <li><a rel="nofollow" class="linkversion" href="http://www.thegioididong.com/?sclient=mobile">Xem bản mobile</a></li>
-            </ul>
-        </div>
-        <div class="footer__col">
-            <div class="f-listtel">
-                <p class="f-listtel__title">
-                    <strong>Tổng đài hỗ trợ</strong> (Miễn phí gọi)
-                </p>
-                <p class="f-listtel__content"><span>Gọi mua:</span> <a href="tel:18001060">1800.1060</a> (7:30 - 22:00)</p>
-                <p class="f-listtel__content"><span>Kỹ thuật:</span> <a href="tel:18001763">1800.1763</a> (7:30 - 22:00)</p>
-                <p class="f-listtel__content"><span>Khiếu nại:</span> <a href="tel:18001062">1800.1062</a> (8:00 - 21:30)</p>
-                <p class="f-listtel__content"><span>Bảo hành:</span> <a href="tel:18001064">1800.1064</a> (8:00 - 21:00)</p>
+<!-- FOOTER -->
+<footer id="footer">
+    <!-- top footer -->
+    <div class="section">
+        <!-- container -->
+        <div class="container">
+            <!-- row -->
+            <div class="row">
+                <div class="col-md-3 col-xs-6">
+                    <div class="footer">
+                        <h3 class="footer-title">About Us</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.</p>
+                        <ul class="footer-links">
+                            <li><a href="#"><i class="fa fa-map-marker"></i>1734 Stonecoal Road</a></li>
+                            <li><a href="#"><i class="fa fa-phone"></i>+021-95-51-84</a></li>
+                            <li><a href="#"><i class="fa fa-envelope-o"></i>email@email.com</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-xs-6">
+                    <div class="footer">
+                        <h3 class="footer-title">Categories</h3>
+                        <ul class="footer-links">
+                            <li><a href="#">Hot deals</a></li>
+                            <li><a href="#">Laptops</a></li>
+                            <li><a href="#">Smartphones</a></li>
+                            <li><a href="#">Cameras</a></li>
+                            <li><a href="#">Accessories</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="clearfix visible-xs"></div>
+
+                <div class="col-md-3 col-xs-6">
+                    <div class="footer">
+                        <h3 class="footer-title">Information</h3>
+                        <ul class="footer-links">
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Orders and Returns</a></li>
+                            <li><a href="#">Terms & Conditions</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-xs-6">
+                    <div class="footer">
+                        <h3 class="footer-title">Service</h3>
+                        <ul class="footer-links">
+                            <li><a href="#">My Account</a></li>
+                            <li><a href="#">View Cart</a></li>
+                            <li><a href="#">Wishlist</a></li>
+                            <li><a href="#">Track My Order</a></li>
+                            <li><a href="#">Help</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
+            <!-- /row -->
         </div>
-        <div class="footer__col">
-            <div class="f-social">
-                <a href="https://www.facebook.com/thegioididongcom" class="link-fb">
-                    <i class="icon-facebook"></i>
-                    3670.7k Fan
-                </a>
-                <a href="https://www.youtube.com/user/TGDDVideoReviews" class="link-ytb">
-                    <i class="icon-youtube"></i>
-                    806k Đăng ký
-                </a>
-            </div>
-            <div class="f-certify">
-                <a rel="nofollow" href="http://online.gov.vn/Home/WebDetails/20090" target="_blank">
-                    <i class="icon-congthuong"></i>
-                </a>
-                <a rel="nofollow" href="/tos#giai-quyet-khieu-nai" target="_blank">
-                    <i class="icon-khieunai"></i>
-                </a>
-                <a rel="nofollow" class="dmca-badge" href="https://www.dmca.com/Protection/Status.aspx?ID=5b62e759-2a0c-4d86-b972-af903bfbc89d&amp;refurl=https://www.thegioididong.com/" target="_blank">
-                    <i class="icon-protected"></i>
-                </a>
-            </div>
-            <div class="f-website">
-                <p class="f-website-title">Website cùng tập đoàn</p>
-                <a rel="nofollow" href="https://www.dienmayxanh.com/">
-                    <i class="icon-dmx"></i>
-                </a>
-                <a rel="nofollow" href="https://www.bachhoaxanh.com/">
-                    <i class="icon-bhx"></i>
-                </a>
-                <a rel="nofollow" href="https://www.maiamtgdd.vn/">
-                    <i class="icon-maiam"></i>
-                </a>
-            </div>
-        </div>
-    </section>
-    <div class="copyright">
-        <section>
-            <p>
-                © 2018. Công ty cổ phần Thế Giới Di Động. GPDKKD: 0303217354 do sở KH &amp; ĐT TP.HCM cấp ngày 02/01/2007. GPMXH: 238/GP-BTTTT do Bộ Thông Tin và Truyền Thông cấp ngày 04/06/2020.<br>
-                Địa chỉ: 128 Trần Quang Khải, P. Tân Định, Q.1, TP.Hồ Chí Minh. Điện thoại: 028 38125960. Email: cskh@thegioididong.com. Chịu trách nhiệm nội dung: Huỳnh Văn Tốt. <a rel="nofollow" href="/thoa-thuan-su-dung-trang-mxh">Xem chính sách sử dụng</a>
-            </p>
-        </section>
+        <!-- /container -->
     </div>
+    <!-- /top footer -->
+
+    <!-- bottom footer -->
+    <div id="bottom-footer" class="section">
+        <div class="container">
+            <!-- row -->
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <ul class="footer-payments">
+                        <li><a href="#"><i class="fa fa-cc-visa"></i></a></li>
+                        <li><a href="#"><i class="fa fa-credit-card"></i></a></li>
+                        <li><a href="#"><i class="fa fa-cc-paypal"></i></a></li>
+                        <li><a href="#"><i class="fa fa-cc-mastercard"></i></a></li>
+                        <li><a href="#"><i class="fa fa-cc-discover"></i></a></li>
+                        <li><a href="#"><i class="fa fa-cc-amex"></i></a></li>
+                    </ul>
+                    <span class="copyright">
+								<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+								Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+							</span>
+                </div>
+            </div>
+            <!-- /row -->
+        </div>
+        <!-- /container -->
+    </div>
+    <!-- /bottom footer -->
 </footer>
+<!-- /FOOTER -->
