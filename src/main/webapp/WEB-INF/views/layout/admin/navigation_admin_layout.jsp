@@ -92,45 +92,9 @@
                 <div class="badge bg-danger rounded-pill ms-auto">5</div>
             </a>
             <ul class="menu-sub">
-                <li class="menu-item">
-                    <a
-                            href="https://demos.themeselection.com/materio-bootstrap-html-admin-template/html/vertical-menu-template/dashboards-crm.html"
-                            target="_blank"
-                            class="menu-link">
-                        <div data-i18n="CRM">CRM</div>
-                        <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto">Pro</div>
-                    </a>
-                </li>
                 <li class="menu-item active">
                     <a href="index.html" class="menu-link">
                         <div data-i18n="Analytics">Analytics</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a
-                            href="https://demos.themeselection.com/materio-bootstrap-html-admin-template/html/vertical-menu-template/app-ecommerce-dashboard.html"
-                            target="_blank"
-                            class="menu-link">
-                        <div data-i18n="eCommerce">eCommerce</div>
-                        <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto">Pro</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a
-                            href="https://demos.themeselection.com/materio-bootstrap-html-admin-template/html/vertical-menu-template/app-logistics-dashboard.html"
-                            target="_blank"
-                            class="menu-link">
-                        <div data-i18n="Logistics">Logistics</div>
-                        <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto">Pro</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a
-                            href="https://demos.themeselection.com/materio-bootstrap-html-admin-template/html/vertical-menu-template/app-academy-dashboard.html"
-                            target="_blank"
-                            class="menu-link">
-                        <div data-i18n="Academy">Academy</div>
-                        <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto">Pro</div>
                     </a>
                 </li>
             </ul>
@@ -172,101 +136,10 @@
             </ul>
         </li>
 
-        <!-- Front Pages -->
-        <li class="menu-item">
-            <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons mdi mdi-flip-to-front"></i>
-                <div data-i18n="Front Pages">Front Pages</div>
-                <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto">Pro</div>
-            </a>
-            <ul class="menu-sub">
-                <li class="menu-item">
-                    <a
-                            href="https://demos.themeselection.com/materio-bootstrap-html-admin-template/html/front-pages/landing-page.html"
-                            class="menu-link"
-                            target="_blank">
-                        <div data-i18n="Landing">Landing</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a
-                            href="https://demos.themeselection.com/materio-bootstrap-html-admin-template/html/front-pages/pricing-page.html"
-                            class="menu-link"
-                            target="_blank">
-                        <div data-i18n="Pricing">Pricing</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a
-                            href="https://demos.themeselection.com/materio-bootstrap-html-admin-template/html/front-pages/payment-page.html"
-                            class="menu-link"
-                            target="_blank">
-                        <div data-i18n="Payment">Payment</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a
-                            href="https://demos.themeselection.com/materio-bootstrap-html-admin-template/html/front-pages/checkout-page.html"
-                            class="menu-link"
-                            target="_blank">
-                        <div data-i18n="Checkout">Checkout</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a
-                            href="https://demos.themeselection.com/materio-bootstrap-html-admin-template/html/front-pages/help-center-landing.html"
-                            class="menu-link"
-                            target="_blank">
-                        <div data-i18n="Help Center">Help Center</div>
-                    </a>
-                </li>
-            </ul>
-        </li>
-
         <li class="menu-header fw-medium mt-4">
             <span class="menu-header-text">Apps &amp; Pages</span>
         </li>
         <!-- Apps -->
-        <li class="menu-item">
-            <a
-                    href="https://demos.themeselection.com/materio-bootstrap-html-admin-template/html/vertical-menu-template/app-email.html"
-                    target="_blank"
-                    class="menu-link">
-                <i class="menu-icon tf-icons mdi mdi-email-outline"></i>
-                <div data-i18n="Email">Email</div>
-                <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto">Pro</div>
-            </a>
-        </li>
-        <li class="menu-item">
-            <a
-                    href="https://demos.themeselection.com/materio-bootstrap-html-admin-template/html/vertical-menu-template/app-chat.html"
-                    target="_blank"
-                    class="menu-link">
-                <i class="menu-icon tf-icons mdi mdi-message-outline"></i>
-                <div data-i18n="Chat">Chat</div>
-                <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto">Pro</div>
-            </a>
-        </li>
-        <li class="menu-item">
-            <a
-                    href="https://demos.themeselection.com/materio-bootstrap-html-admin-template/html/vertical-menu-template/app-calendar.html"
-                    target="_blank"
-                    class="menu-link">
-                <i class="menu-icon tf-icons mdi mdi-calendar-blank-outline"></i>
-                <div data-i18n="Calendar">Calendar</div>
-                <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto">Pro</div>
-            </a>
-        </li>
-        <li class="menu-item">
-            <a
-                    href="https://demos.themeselection.com/materio-bootstrap-html-admin-template/html/vertical-menu-template/app-kanban.html"
-                    target="_blank"
-                    class="menu-link">
-                <i class="menu-icon tf-icons mdi mdi-view-grid-outline"></i>
-                <div data-i18n="Kanban">Kanban</div>
-                <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto">Pro</div>
-            </a>
-        </li>
         <!-- Pages -->
         <li class="menu-item">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
@@ -513,53 +386,11 @@
                 </li>
             </ul>
         </li>
-        <!-- Form Validation -->
-        <li class="menu-item">
-            <a
-                    href="https://demos.themeselection.com/materio-bootstrap-html-admin-template/html/vertical-menu-template/form-validation.html"
-                    target="_blank"
-                    class="menu-link">
-                <i class="menu-icon tf-icons mdi mdi-checkbox-marked-circle-outline"></i>
-                <div data-i18n="Form Validation">Form Validation</div>
-                <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto">Pro</div>
-            </a>
-        </li>
         <!-- Tables -->
         <li class="menu-item">
             <a href="tables-basic.html" class="menu-link">
                 <i class="menu-icon tf-icons mdi mdi-table"></i>
                 <div data-i18n="Tables">Tables</div>
-            </a>
-        </li>
-        <!-- Data Tables -->
-        <li class="menu-item">
-            <a
-                    href="https://demos.themeselection.com/materio-bootstrap-html-admin-template/html/vertical-menu-template/tables-datatables-basic.html"
-                    target="_blank"
-                    class="menu-link">
-                <i class="menu-icon tf-icons mdi mdi-grid"></i>
-                <div data-i18n="Datatables">Datatables</div>
-                <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto">Pro</div>
-            </a>
-        </li>
-        <!-- Misc -->
-        <li class="menu-header fw-medium mt-4"><span class="menu-header-text">Misc</span></li>
-        <li class="menu-item">
-            <a
-                    href="https://github.com/themeselection/materio-bootstrap-html-admin-template-free/issues"
-                    target="_blank"
-                    class="menu-link">
-                <i class="menu-icon tf-icons mdi mdi-lifebuoy"></i>
-                <div data-i18n="Support">Support</div>
-            </a>
-        </li>
-        <li class="menu-item">
-            <a
-                    href="https://demos.themeselection.com/materio-bootstrap-html-admin-template/documentation/"
-                    target="_blank"
-                    class="menu-link">
-                <i class="menu-icon tf-icons mdi mdi-file-document-multiple-outline"></i>
-                <div data-i18n="Documentation">Documentation</div>
             </a>
         </li>
     </ul>
