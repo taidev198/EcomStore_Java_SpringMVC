@@ -3,7 +3,7 @@
 <decorators defaultdir="/WEB-INF/views/layout/">
     <!--    filter what is users layout or admins layout-->
     <decorator name="user" page="user.jsp"><!--        the url to filter to direct-->
-        <pattern>/*</pattern>
+        <pattern>/trang-chu*</pattern>
     </decorator>
     <decorator name="admin" page="admin/admin_layout.jsp">
         <pattern>/admin*</pattern>
