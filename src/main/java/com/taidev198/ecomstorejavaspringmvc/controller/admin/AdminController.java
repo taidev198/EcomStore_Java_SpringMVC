@@ -1,11 +1,16 @@
 package com.taidev198.ecomstorejavaspringmvc.controller.admin;
 
+import com.taidev198.ecomstorejavaspringmvc.service.admin.UserServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class AdminController {
 
+    @Autowired
+    UserServiceImpl userService;
 
     @RequestMapping(value = "/admin")
     public String index() {
@@ -18,7 +23,10 @@ public class AdminController {
     }
 
     @RequestMapping(value = "/admin-list-users")
-    public String listUsersAdmin(){
-        return "admin/show_users_admin";
+    public ModelAndView listUsers(){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.addObject("users", userService.getAllUsers());
+        modelAndView.setViewName("admin/show_users_admin");
+        return modelAndView;
     }
 }
