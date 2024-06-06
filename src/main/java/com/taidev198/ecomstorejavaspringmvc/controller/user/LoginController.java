@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class LoginController {
@@ -18,24 +19,26 @@ public class LoginController {
     UserServiceImpl userService;
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public String login() {
-        return "user/login";
+    public ModelAndView login() {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("user/login");
+        return modelAndView;
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public String doLogin(HttpServletRequest request, Model model) {
-
+    public ModelAndView doLogin(HttpServletRequest request, Model model) {
+        ModelAndView modelAndView = new ModelAndView();
         System.out.println("doLogin");
         String username = request.getParameter("username");//getting from name of element in web page
         String password = request.getParameter("password");
         User user = userService.getUserByUsername(username);
         if (user !=null ) {
             if (user.getUsername().equals("admin") && user.getPassword().equals(password)) {
-                return "admin/index_body";
-            }
-            return "user/home_body";
-        }
-
-        return "user/login";
+                modelAndView.setViewName("redirect:/admin");
+            } else
+             modelAndView.setViewName("redirect:/trang-chu");
+        }else
+             modelAndView.setViewName("redirect:/login");
+        return modelAndView;
     }
 }
