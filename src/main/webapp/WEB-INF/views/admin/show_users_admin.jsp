@@ -8,6 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://www.opensymphony.com/sitemesh/decorator"  prefix="decorator"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <!-- Content wrapper -->
 <div class="content-wrapper">
@@ -16,7 +17,9 @@
     <div class="container-xxl flex-grow-1 container-p-y">
         <div class="row gy-4">
             <!-- Data Tables -->
-            <div class="col-12">
+            <form:form action="admin-delete-all" modelAttribute="ItemCheckBox">
+                <input type="submit" value="Delete All" />
+                <div class="col-12">
                 <div class="card">
                     <div class="table-responsive">
                         <table class="table">
@@ -39,7 +42,7 @@
                             <tr>
                                 <td>
                                     <div class="text-truncate">
-                                        <input type="checkbox" class="mdi-24px">
+                                        <form:checkbox path="listUserId" value="${user.id}"/>
                                         <br>
                                     <%--                                        <div class="avatar avatar-sm me-3">--%>
 <%--                                            <img src="<c:url value="/assets/admin/img/avatars/1.png"/>" alt="Avatar" class="rounded-circle" />--%>
@@ -76,7 +79,7 @@
                 </div>
             </div>
             <!-- Data Tables -->
-
+            </form:form>
         </div>
         <nav aria-label="Page navigation">
             <ul class="pagination pagination-rounded pagination-outline-primary">

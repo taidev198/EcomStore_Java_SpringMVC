@@ -69,6 +69,7 @@ public class UserDAO {
         return user.get(0);
     }
 
+    //https://stackoverflow.com/questions/1905607/cannot-issue-data-manipulation-statements-with-executequery
     public int createUser(User user) {
         StringBuilder queryBuilder = new StringBuilder();
         queryBuilder.append("INSERT INTO user_ecom (username, fullname, password, email, number, address, statusId, roleId) VALUE ");
