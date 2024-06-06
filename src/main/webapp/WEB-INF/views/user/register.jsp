@@ -142,7 +142,7 @@
                     <h4 class="mb-2">Adventure starts here 🚀</h4>
                     <p class="mb-4">Make your app management easy and fun!</p>
 
-                    <form id="formAuthentication" class="mb-3" action="index.html">
+                    <form id="formAuthentication" class="mb-3" action="<c:url value="/register?action=register"/>" method="post">
                         <div class="form-floating form-floating-outline mb-3">
                             <input
                                     type="text"
@@ -156,6 +156,37 @@
                         <div class="form-floating form-floating-outline mb-3">
                             <input type="text" class="form-control" id="email" name="email" placeholder="Enter your email" />
                             <label for="email">Email</label>
+                        </div>
+                        <div class="form-floating form-floating-outline mb-3">
+                            <input
+                                    type="text"
+                                    class="form-control"
+                                    id="fullname"
+                                    name="fullname"
+                                    placeholder="Enter your fullname"
+                                    autofocus />
+                            <label for="username">Full name</label>
+                        </div>
+                        <div class="form-floating form-floating-outline mb-3">
+                            <input
+                                    type="text"
+                                    class="form-control"
+                                    id="number"
+                                    name="number"
+                                    placeholder="Enter your phone number"
+                                    autofocus />
+                            <label for="username">Phone number</label>
+                        </div>
+
+                        <div class="form-floating form-floating-outline mb-3">
+                            <input
+                                    type="text"
+                                    class="form-control"
+                                    id="address"
+                                    name="address"
+                                    placeholder="Enter your address"
+                                    autofocus />
+                            <label for="username">Address</label>
                         </div>
                         <div class="mb-3 form-password-toggle">
                             <div class="input-group input-group-merge">

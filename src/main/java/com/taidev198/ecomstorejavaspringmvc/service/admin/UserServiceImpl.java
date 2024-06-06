@@ -27,4 +27,14 @@ public class UserServiceImpl implements IUserService {
     public User getUserByUsername(String username) {
         return userDAO.getUserByUsername(username);
     }
+
+    @Override
+    public User getUserByEmail(String email) {
+        return userDAO.getUserByEmail(email);
+    }
+
+    @Override
+    public int createUser(User user) {
+        return userDAO.createUser(user);
+    }
 }

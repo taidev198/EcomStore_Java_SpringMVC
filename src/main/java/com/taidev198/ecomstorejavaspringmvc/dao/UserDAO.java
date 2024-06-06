@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Repository
@@ -56,4 +57,23 @@ public class UserDAO {
     }
 
 
+    public User getUserByEmail(String email) {
+        List<User> user = null;
+        StringBuilder sql = new StringBuilder("select * from user_ecom where email = '"+email+"';");
+        System.out.println(sql);
+        user = _jdbcTemplate
+                .query(sql.toString(),
+                        new UserMapper());
+        if (user.isEmpty())
+            return null;
+        return user.get(0);
+    }
+
+    public int createUser(User user) {
+        StringBuilder queryBuilder = new StringBuilder();
+        queryBuilder.append("INSERT INTO user_ecom (username, fullname, password, email, number, address, statusId, roleId) VALUE ");
+        queryBuilder.append("('"+ user.getUsername()+"', '"+user.getFullname()+"', '"+user.getPassword()+"', '"+user.getEmail()+"', '"+user.getNumber()+"', '"+user.getAddress()+"', 1, 1);");
+        return  _jdbcTemplate
+                .update(queryBuilder.toString());
+    }
 }

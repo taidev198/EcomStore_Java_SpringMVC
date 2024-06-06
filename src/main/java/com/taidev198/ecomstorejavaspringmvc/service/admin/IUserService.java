@@ -9,4 +9,6 @@ public interface IUserService {
     List<User> getAllUsers();
     User getUserById(int id);
     User getUserByUsername(String username);
+    User getUserByEmail(String email);
+    int createUser(User user);
 }
