@@ -23,11 +23,13 @@
                             <thead class="table-light">
                             <tr>
                                 <th class="text-truncate"></th>
-                                <th class="text-truncate">User</th>
+                                <th class="text-truncate">ID</th>
+                                <th class="text-truncate">Name</th>
+                                <th class="text-truncate">Number</th>
                                 <th class="text-truncate">Email</th>
+                                <th class="text-truncate">Address</th>
                                 <th class="text-truncate">Role</th>
-                                <th class="text-truncate">Age</th>
-                                <th class="text-truncate">Salary</th>
+                                <th class="text-truncate">Total Spending</th>
                                 <th class="text-truncate">Status</th>
                                 <th class="text-truncate">Action</th>
                             </tr>
@@ -62,7 +64,7 @@
                 <i class="mdi mdi-dots-vertical"></i>
             </button>
             <div class="dropdown-menu" style="">
-                <a class="dropdown-item waves-effect" href="javascript:void(0);"><i class="mdi mdi-pencil-outline me-1"></i> Edit</a>
+                <a class="dropdown-item waves-effect" href="<c:url value="admin-profile-details"/>"><i class="mdi mdi-pencil-outline me-1"></i> Edit</a>
                 <a class="dropdown-item waves-effect" href="javascript:void(0);"><i class="mdi mdi-trash-can-outline me-1"></i> Delete</a>
             </div>
         </div>
