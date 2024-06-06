@@ -32,10 +32,15 @@
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
             href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&ampdisplay=swap"
             rel="stylesheet" />
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="<c:url value="/assets/admin/vendor/fonts/remixicon/remixicon.css"/>" />
+    <link rel="stylesheet" href="<c:url value="/assets/admin/vendor/fonts/flag-icons.css"/>" />
+
 
     <link rel="stylesheet" href="<c:url value="/assets/admin/vendor/fonts/materialdesignicons.css"/>" />
 
@@ -50,6 +55,14 @@
     <!-- Vendors CSS -->
     <link rel="stylesheet" href="<c:url value="/assets/admin/vendor/libs/perfect-scrollbar/perfect-scrollbar.css"/>" />
     <link rel="stylesheet" href="<c:url value="/assets/admin/vendor/libs/apex-charts/apex-charts.css"/>" />
+    <link rel="stylesheet" href="<c:url value="/assets/admin/vendor/libs/typeahead-js/typeahead.css"/>" />
+    <link rel="stylesheet" href="<c:url value="/assets/admin/vendor/libs/datatables-bs5/datatables.bootstrap5.css"/>">
+    <link rel="stylesheet" href="<c:url value="/assets/admin/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.css"/>">
+    <link rel="stylesheet" href="<c:url value="/assets/admin/vendor/libs/datatables-buttons-bs5/buttons.bootstrap5.css"/>">
+    <link rel="stylesheet" href="<c:url value="/assets/admin/vendor/libs/datatables-checkboxes-jquery/datatables.checkboxes.css"/>">
+    <link rel="stylesheet" href="<c:url value="/assets/admin/vendor/libs/select2/select2.css"/>" />
+    <link rel="stylesheet" href="<c:url value="/assets/admin/vendor/libs/@form-validation/form-validation.css"/>" />
+
 
     <!-- Page CSS -->
 
