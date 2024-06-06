@@ -144,13 +144,13 @@
           <h4 class="mb-2">Welcome to Materio! 👋</h4>
           <p class="mb-4">Please sign-in to your account and start the adventure</p>
 
-          <form id="formAuthentication" class="mb-3" action="index.html">
+          <form id="formAuthentication" class="mb-3" action="<c:url value="/login"/>" method="post">
             <div class="form-floating form-floating-outline mb-3">
               <input
                       type="text"
                       class="form-control"
                       id="email"
-                      name="email-username"
+                      name="username"
                       placeholder="Enter your email or username"
                       autofocus />
               <label for="email">Email or Username</label>
@@ -203,8 +203,8 @@
               src="<c:url value="/assets/admin/img/illustrations/auth-basic-mask-light.png"/>"
               class="authentication-image d-none d-lg-block"
               alt="triangle-bg"
-              data-app-light-img="illustrations/auth-basic-mask-light.png"/>"
-              data-app-dark-img="illustrations/auth-basic-mask-dark.png"/>" />
+              data-app-light-img="illustrations/auth-basic-mask-light.png"
+              data-app-dark-img="illustrations/auth-basic-mask-dark.png" />
       <img
               src="<c:url value="/assets/admin/img/illustrations/tree.png"/>"
               alt="auth-tree"
@@ -243,7 +243,7 @@
 <!-- Page JS -->
 
 <!-- Place this tag in your head or just before your close body tag. -->
-<script async defer src="https://buttons.github.io/buttons.js"/>"></script>
+<script async defer src="https://buttons.github.io/buttons.js"></script>
 </body>
 </html>
 
