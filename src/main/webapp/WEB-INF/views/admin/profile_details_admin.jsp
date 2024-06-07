@@ -50,15 +50,17 @@
                   </div>
                 </div>
                 <div class="card-body pt-2 mt-1">
-                  <form id="formAccountSettings" method="POST" onsubmit="return false">
+                  <form id="formAccountSettings" method="POST" action="<c:url value="/admin-update-user"/>" name="user">
+                    <h4 class="card-header" ${alert}>${message}</h4>
                     <div class="row mt-2 gy-4">
                       <div class="col-md-6">
                         <div class="form-floating form-floating-outline">
+                          <input type="hidden" name="id" value="${user.id}">
                           <input
                                   class="form-control"
                                   type="text"
                                   id="firstName"
-                                  name="firstName"
+                                  name="username"
                                   value="${user.username}"
                                   autofocus />
                           <label for="firstName">UserName</label>
@@ -66,7 +68,7 @@
                       </div>
                       <div class="col-md-6">
                         <div class="form-floating form-floating-outline">
-                          <input class="form-control" type="text" name="lastName" id="lastName" value="${user.fullname}" />
+                          <input class="form-control" type="text" name="fullname" id="lastName" value="${user.fullname}" />
                           <label for="lastName">Full Name</label>
                         </div>
                       </div>
@@ -89,7 +91,7 @@
                                   class="form-control"
                                   id="password"
                                   value="${user.password}"
-                                  name="ThemeSelection" />
+                                  name="password" />
                           <label for="password">Password</label>
                         </div>
                       </div>
@@ -122,7 +124,7 @@
                       </div>
                       <div class="col-md-6">
                         <div class="form-floating form-floating-outline">
-                          <select name="cars" id="cars" >
+                          <select name="statusId" id="cars" >
                             <c:forEach var="statusItem" items="${status}">
                               <option value="${statusItem.id}" <c:if test="${statusItem.id == user.statusId}">selected </c:if>>${statusItem.name}</option>
                             </c:forEach>
@@ -131,7 +133,7 @@
                       </div>
                       <div class="col-md-6">
                         <div class="form-floating form-floating-outline">
-                          <select name="cars" >
+                          <select name="roleId" >
                             <c:forEach var="roleItem" items="${roles}">
                               <option value="${roleItem.id}" <c:if test="${roleItem.id == user.roleId}">selected </c:if>>${roleItem.name}</option>
                             </c:forEach>
@@ -157,7 +159,7 @@
                       <p class="mb-0">Once you delete your account, there is no going back. Please be certain.</p>
                     </div>
                   </div>
-                  <form id="formAccountDeactivation" onsubmit="return false">
+                  <form id="formAccountDeactivation" >
                     <div class="form-check mb-3 ms-3">
                       <input
                               class="form-check-input"

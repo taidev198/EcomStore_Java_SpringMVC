@@ -48,7 +48,7 @@ public class UserDAO {
 
     public int updateUser(User user) {
             StringBuilder queryBuilder = new StringBuilder();
-            queryBuilder.append("update user_ecom set username = '"+ user.getUsername()+"', fullname = '"+user.getFullname()+"', password = '"+user.getPassword()+"', email = '"+user.getEmail()+"', number = "+user.getNumber()+", address = '"+user.getAddress()+"', statusId = "+ user.getStatusId() +", roleId = " + user.getRoleId() +";");
+            queryBuilder.append("update user_ecom set username = '"+ user.getUsername()+"', fullname = '"+user.getFullname()+"', password = '"+user.getPassword()+"', email = '"+user.getEmail()+"', number = "+user.getNumber()+", address = '"+user.getAddress()+"', statusId = "+ user.getStatusId() +", roleId = " + user.getRoleId() +" where id = "+ user.getId());
         return   _jdbcTemplate.update(queryBuilder.toString());
     }
 
