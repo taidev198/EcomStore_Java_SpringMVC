@@ -8,8 +8,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://www.opensymphony.com/sitemesh/decorator"  prefix="decorator"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
-      <!-- Content wrapper -->
+<!-- Content wrapper -->
       <div class="content-wrapper">
         <!-- Content -->
 
@@ -18,23 +19,6 @@
 
           <div class="row">
             <div class="col-md-12">
-              <ul class="nav nav-pills flex-column flex-md-row mb-4 gap-2 gap-lg-0">
-                <li class="nav-item">
-                  <a class="nav-link active" href="javascript:void(0);"
-                  ><i class="mdi mdi-account-outline mdi-20px me-1"></i>Account</a
-                  >
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="pages-account-settings-notifications.html"
-                  ><i class="mdi mdi-bell-outline mdi-20px me-1"></i>Notifications</a
-                  >
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="pages-account-settings-connections.html"
-                  ><i class="mdi mdi-link mdi-20px me-1"></i>Connections</a
-                  >
-                </li>
-              </ul>
               <div class="card mb-4">
                 <h4 class="card-header">Profile Details</h4>
                 <!-- Account -->
@@ -75,15 +59,15 @@
                                   type="text"
                                   id="firstName"
                                   name="firstName"
-                                  value="John"
+                                  value="${user.username}"
                                   autofocus />
-                          <label for="firstName">First Name</label>
+                          <label for="firstName">UserName</label>
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="form-floating form-floating-outline">
-                          <input class="form-control" type="text" name="lastName" id="lastName" value="Doe" />
-                          <label for="lastName">Last Name</label>
+                          <input class="form-control" type="text" name="lastName" id="lastName" value="${user.fullname}" />
+                          <label for="lastName">Full Name</label>
                         </div>
                       </div>
                       <div class="col-md-6">
@@ -93,7 +77,7 @@
                                   type="text"
                                   id="email"
                                   name="email"
-                                  value="john.doe@example.com"
+                                  value="${user.email}"
                                   placeholder="john.doe@example.com" />
                           <label for="email">E-mail</label>
                         </div>
@@ -101,12 +85,12 @@
                       <div class="col-md-6">
                         <div class="form-floating form-floating-outline">
                           <input
-                                  type="text"
+                                  type="password"
                                   class="form-control"
-                                  id="organization"
-                                  name="organization"
-                                  value="ThemeSelection" />
-                          <label for="organization">Organization</label>
+                                  id="password"
+                                  value="${user.password}"
+                                  name="ThemeSelection" />
+                          <label for="password">Password</label>
                         </div>
                       </div>
                       <div class="col-md-6">
@@ -115,7 +99,8 @@
                             <input
                                     type="text"
                                     id="phoneNumber"
-                                    name="phoneNumber"
+                                    name="number"
+                                    value="${user.number}"
                                     class="form-control"
                                     placeholder="202 555 0111" />
                             <label for="phoneNumber">Phone Number</label>
@@ -129,6 +114,7 @@
                                   type="text"
                                   class="form-control"
                                   id="address"
+                                  value="${user.address}"
                                   name="address"
                                   placeholder="Address" />
                           <label for="address">Address</label>
@@ -136,107 +122,20 @@
                       </div>
                       <div class="col-md-6">
                         <div class="form-floating form-floating-outline">
-                          <input
-                                  class="form-control"
-                                  type="text"
-                                  id="state"
-                                  name="state"
-                                  placeholder="California" />
-                          <label for="state">State</label>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-floating form-floating-outline">
-                          <input
-                                  type="text"
-                                  class="form-control"
-                                  id="zipCode"
-                                  name="zipCode"
-                                  placeholder="231465"
-                                  maxlength="6" />
-                          <label for="zipCode">Zip Code</label>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-floating form-floating-outline">
-                          <select id="country" class="select2 form-select">
-                            <option value="">Select</option>
-                            <option value="Australia">Australia</option>
-                            <option value="Bangladesh">Bangladesh</option>
-                            <option value="Belarus">Belarus</option>
-                            <option value="Brazil">Brazil</option>
-                            <option value="Canada">Canada</option>
-                            <option value="China">China</option>
-                            <option value="France">France</option>
-                            <option value="Germany">Germany</option>
-                            <option value="India">India</option>
-                            <option value="Indonesia">Indonesia</option>
-                            <option value="Israel">Israel</option>
-                            <option value="Italy">Italy</option>
-                            <option value="Japan">Japan</option>
-                            <option value="Korea">Korea, Republic of</option>
-                            <option value="Mexico">Mexico</option>
-                            <option value="Philippines">Philippines</option>
-                            <option value="Russia">Russian Federation</option>
-                            <option value="South Africa">South Africa</option>
-                            <option value="Thailand">Thailand</option>
-                            <option value="Turkey">Turkey</option>
-                            <option value="Ukraine">Ukraine</option>
-                            <option value="United Arab Emirates">United Arab Emirates</option>
-                            <option value="United Kingdom">United Kingdom</option>
-                            <option value="United States">United States</option>
+                          <select name="cars" id="cars" >
+                            <c:forEach var="statusItem" items="${status}">
+                              <option value="${statusItem.id}" <c:if test="${statusItem.id == user.statusId}">selected </c:if>>${statusItem.name}</option>
+                            </c:forEach>
                           </select>
-                          <label for="country">Country</label>
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="form-floating form-floating-outline">
-                          <select id="language" class="select2 form-select">
-                            <option value="">Select Language</option>
-                            <option value="en">English</option>
-                            <option value="fr">French</option>
-                            <option value="de">German</option>
-                            <option value="pt">Portuguese</option>
+                          <select name="cars" >
+                            <c:forEach var="roleItem" items="${roles}">
+                              <option value="${roleItem.id}" <c:if test="${roleItem.id == user.roleId}">selected </c:if>>${roleItem.name}</option>
+                            </c:forEach>
                           </select>
-                          <label for="language">Language</label>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-floating form-floating-outline">
-                          <select id="timeZones" class="select2 form-select">
-                            <option value="">Select Timezone</option>
-                            <option value="-12">(GMT-12:00) International Date Line West</option>
-                            <option value="-11">(GMT-11:00) Midway Island, Samoa</option>
-                            <option value="-10">(GMT-10:00) Hawaii</option>
-                            <option value="-9">(GMT-09:00) Alaska</option>
-                            <option value="-8">(GMT-08:00) Pacific Time (US & Canada)</option>
-                            <option value="-8">(GMT-08:00) Tijuana, Baja California</option>
-                            <option value="-7">(GMT-07:00) Arizona</option>
-                            <option value="-7">(GMT-07:00) Chihuahua, La Paz, Mazatlan</option>
-                            <option value="-7">(GMT-07:00) Mountain Time (US & Canada)</option>
-                            <option value="-6">(GMT-06:00) Central America</option>
-                            <option value="-6">(GMT-06:00) Central Time (US & Canada)</option>
-                            <option value="-6">(GMT-06:00) Guadalajara, Mexico City, Monterrey</option>
-                            <option value="-6">(GMT-06:00) Saskatchewan</option>
-                            <option value="-5">(GMT-05:00) Bogota, Lima, Quito, Rio Branco</option>
-                            <option value="-5">(GMT-05:00) Eastern Time (US & Canada)</option>
-                            <option value="-5">(GMT-05:00) Indiana (East)</option>
-                            <option value="-4">(GMT-04:00) Atlantic Time (Canada)</option>
-                            <option value="-4">(GMT-04:00) Caracas, La Paz</option>
-                          </select>
-                          <label for="timeZones">Timezone</label>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-floating form-floating-outline">
-                          <select id="currency" class="select2 form-select">
-                            <option value="">Select Currency</option>
-                            <option value="usd">USD</option>
-                            <option value="euro">Euro</option>
-                            <option value="pound">Pound</option>
-                            <option value="bitcoin">Bitcoin</option>
-                          </select>
-                          <label for="currency">Currency</label>
                         </div>
                       </div>
                     </div>
@@ -245,6 +144,7 @@
                       <button type="reset" class="btn btn-outline-secondary">Reset</button>
                     </div>
                   </form>
+
                 </div>
                 <!-- /Account -->
               </div>

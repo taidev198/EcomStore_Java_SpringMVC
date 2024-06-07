@@ -47,13 +47,15 @@ public class UserDAO {
     }
 
     public int updateUser(User user) {
-        _jdbcTemplate.execute("");
-        return 0;
+            StringBuilder queryBuilder = new StringBuilder();
+            queryBuilder.append("update user_ecom set username = '"+ user.getUsername()+"', fullname = '"+user.getFullname()+"', password = '"+user.getPassword()+"', email = '"+user.getEmail()+"', number = "+user.getNumber()+", address = '"+user.getAddress()+"', statusId = "+ user.getStatusId() +", roleId = " + user.getRoleId() +";");
+        return   _jdbcTemplate.update(queryBuilder.toString());
     }
 
     public int deleteUser(int id) {
-        _jdbcTemplate.execute("");
-        return 0;
+        String sql = "delete from user_ecom where id = " + id;
+        return  _jdbcTemplate.update(sql);
+
     }
 
 

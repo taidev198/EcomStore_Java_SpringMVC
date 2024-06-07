@@ -66,7 +66,7 @@
                 <i class="mdi mdi-dots-vertical"></i>
             </button>
             <div class="dropdown-menu" style="">
-                <a class="dropdown-item waves-effect" href="<c:url value="admin-profile-details"/>"><i class="mdi mdi-pencil-outline me-1"></i> Edit</a>
+                <a class="dropdown-item waves-effect" href="<c:url value="admin-edit/${user.id}"/>"><i class="mdi mdi-pencil-outline me-1"></i> Edit</a>
                 <a class="dropdown-item waves-effect" href="javascript:void(0);"><i class="mdi mdi-trash-can-outline me-1"></i> Delete</a>
             </div>
         </div>
