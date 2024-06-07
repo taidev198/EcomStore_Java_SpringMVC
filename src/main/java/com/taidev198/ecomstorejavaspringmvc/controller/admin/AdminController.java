@@ -58,12 +58,12 @@ public class AdminController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/admin-delete/{id}", method = RequestMethod.POST)
+    @RequestMapping(value = "/admin-delete/{id}")
     public ModelAndView deleteOneUser(@ModelAttribute("id") int id){
         ModelAndView modelAndView = new ModelAndView();
-        User user = userService.getUserById(id);
+        userService.deleteUser(id);
         System.out.println("deleteOneUsers: " + id);
-        modelAndView.setViewName("admin/show_users_admin");
+        modelAndView.setViewName("redirect:/admin-list-users");
         return modelAndView;
     }
 
