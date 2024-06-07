@@ -53,8 +53,13 @@ public class AdminController {
     @RequestMapping(value = "/admin-delete-all")
     public ModelAndView deleteAllUsers(@ModelAttribute("ItemCheckBox") ItemCheckBox itemCheckBox){
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.addObject("alert", "");
-        modelAndView.setViewName("admin/show_users_admin");
+        int length = itemCheckBox.getListUserId().length;
+        if (length > 0) {
+            for (int i = 0; i < length; i++) {
+                userService.deleteUser(itemCheckBox.getListUserId()[i]);
+            }
+        }
+        modelAndView.setViewName("redirect:/admin-list-users");
         return modelAndView;
     }
 
