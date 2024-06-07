@@ -19,6 +19,11 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
+    public List<User> getListUsersByPage(int startPage, int totalPage) {
+        return userDAO.getListUsersByPage(startPage, totalPage);
+    }
+
+    @Override
     public User getUserById(int id) {
         return userDAO.getUserById(id);
     }

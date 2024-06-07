@@ -79,4 +79,11 @@ public class UserDAO {
         return  _jdbcTemplate
                 .update(queryBuilder.toString());
     }
+
+    public List<User> getListUsersByPage(int startPage, int totalPage) {
+        List<User> users;
+        String sql = String.format("select * from user_ecom limit %d , %d ;", startPage, totalPage);
+        users = _jdbcTemplate.query(sql, new UserMapper());
+        return users;
+    }
 }

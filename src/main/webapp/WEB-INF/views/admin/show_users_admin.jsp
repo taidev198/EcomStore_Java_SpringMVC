@@ -18,6 +18,21 @@
         <div class="row gy-4">
             <!-- Data Tables -->
             <form:form action="admin-delete-all" modelAttribute="ItemCheckBox">
+<%--            <form>--%>
+                <select name="totalItems" onchange="javascript:handleSelect(this)">
+                    <option value="5" selected href=/admin-list-users">5</option>
+                    <option value="10" href="/admin-list-users">10</option>
+                    <option value="15" href="/admin-list-users">15</option>
+                    <option value="20" href="/admin-list-users">20</option>
+                </select>
+                    <script type="text/javascript">
+                        function handleSelect(elm)
+                        {
+                            window.location.href = "<c:url value="/admin-list-users"/>";
+                        }
+                    </script>
+<%--            </form>--%>
+                <br5>
                 <input type="submit" value="Delete All" />
                 <div class="col-12">
                 <div class="card">
@@ -81,6 +96,7 @@
             <!-- Data Tables -->
             </form:form>
         </div>
+        <br>
         <nav aria-label="Page navigation">
             <ul class="pagination pagination-rounded pagination-outline-primary">
                 <li class="page-item first">
@@ -89,20 +105,11 @@
                 <li class="page-item prev">
                     <a class="page-link waves-effect" href="javascript:void(0);"><i class="tf-icon mdi mdi-chevron-left"></i></a>
                 </li>
+<%--                loop show page--%>
+                <c:forEach var="i" begin="1" end="${numbersOfPage}" >
                 <li class="page-item">
-                    <a class="page-link waves-effect" href="javascript:void(0);">1</a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link waves-effect" href="javascript:void(0);">2</a>
-                </li>
-                <li class="page-item active">
-                    <a class="page-link waves-effect" href="javascript:void(0);">3</a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link waves-effect" href="javascript:void(0);">4</a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link waves-effect" href="javascript:void(0);">5</a>
+                    <a class="page-link waves-effect" href="<c:url value="/admin-list-users/startPage=${i}&totalPage=${totalItems}"/>" name="startPage" id="startPage">${i}</a>
+                </c:forEach>
                 </li>
                 <li class="page-item next">
                     <a class="page-link waves-effect" href="javascript:void(0);"><i class="tf-icon mdi mdi-chevron-right"></i></a>

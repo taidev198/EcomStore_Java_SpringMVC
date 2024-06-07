@@ -7,6 +7,7 @@ import java.util.List;
 public interface IUserService {
 
     List<User> getAllUsers();
+    List<User> getListUsersByPage(int startPage, int totalPage);
     User getUserById(int id);
     User getUserByUsername(String username);
     User getUserByEmail(String email);

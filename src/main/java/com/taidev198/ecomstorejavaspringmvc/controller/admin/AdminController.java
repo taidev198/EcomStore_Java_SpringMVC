@@ -11,10 +11,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -36,16 +33,41 @@ public class AdminController {
         return "admin/index_body";
     }
 
-    @RequestMapping(value = {"/admin-profile-details", })
+    @RequestMapping(value = {"/admin-profile-details" })
     public String profileDetailsAdmin(){
         return "admin/profile_details_admin";
     }
 
-    @RequestMapping(value = "/admin-list-users")
+    @RequestMapping(value = {"/admin-list-users"})
     public ModelAndView listUsers(Model model){
         ModelAndView modelAndView = new ModelAndView();
+        List<User> users = userService.getAllUsers();
+        int numberOfPage = (int) Math.ceil(users.size() / 5.0);
+        List<User> usersByPage = userService.getListUsersByPage(1, 5);
         model.addAttribute("ItemCheckBox", new ItemCheckBox());
-        modelAndView.addObject("users", userService.getAllUsers());
+        modelAndView.addObject("users",usersByPage);
+        model.addAttribute("totalItems", 5);
+        model.addAttribute("numbersOfPage", numberOfPage);
+        System.out.println(model.getAttribute("totalItems"));
+        modelAndView.setViewName("admin/show_users_admin");
+        return modelAndView;
+    }
+
+    @RequestMapping(value = {"/admin-list-users/startPage={page}&totalPage={totalPage}"})
+    public ModelAndView listUsersByPage(
+            Model model,
+            @ModelAttribute("page") int page,
+            @ModelAttribute("totalPage") int totalPage){
+        List<User> users = userService.getAllUsers();
+        ModelAndView modelAndView = new ModelAndView();
+        if (page>1) {
+            page = (page - 1) * totalPage +1;
+        }
+        int numberOfPage = (int) Math.ceil(users.size() / 5.0);
+        model.addAttribute("ItemCheckBox", new ItemCheckBox());
+        model.addAttribute("totalItems", 5);
+        model.addAttribute("numbersOfPage", numberOfPage);
+        modelAndView.addObject("users", userService.getListUsersByPage(page, totalPage));
         modelAndView.setViewName("admin/show_users_admin");
         return modelAndView;
     }
