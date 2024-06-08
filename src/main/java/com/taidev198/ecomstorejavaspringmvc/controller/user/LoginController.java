@@ -5,6 +5,7 @@ import com.taidev198.ecomstorejavaspringmvc.entity.User;
 import com.taidev198.ecomstorejavaspringmvc.service.admin.UserServiceImpl;
 import com.taidev198.ecomstorejavaspringmvc.service.user.HomeServiceImpl;
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -35,8 +36,14 @@ public class LoginController {
         if (user !=null ) {
             if (user.getUsername().equals("admin") && user.getPassword().equals(password)) {
                 modelAndView.setViewName("redirect:/admin");
-            } else
-             modelAndView.setViewName("redirect:/trang-chu");
+            } else {
+                modelAndView.setViewName("redirect:/trang-chu");
+            }
+            HttpSession session = request.getSession();
+            session.setAttribute("username", username);
+            session.setAttribute("user", user);
+            modelAndView.addObject("username", username);
+
         }else
              modelAndView.setViewName("redirect:/login");
         return modelAndView;
