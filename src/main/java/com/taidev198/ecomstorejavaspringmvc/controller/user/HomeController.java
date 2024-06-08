@@ -5,6 +5,7 @@ import com.taidev198.ecomstorejavaspringmvc.entity.Role;
 import com.taidev198.ecomstorejavaspringmvc.entity.Status;
 import com.taidev198.ecomstorejavaspringmvc.entity.User;
 import com.taidev198.ecomstorejavaspringmvc.service.admin.UserServiceImpl;
+import com.taidev198.ecomstorejavaspringmvc.service.user.CategoryServiceImpl;
 import com.taidev198.ecomstorejavaspringmvc.service.user.HomeServiceImpl;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
@@ -22,17 +23,28 @@ import java.util.List;
 public class HomeController {
 
     @Autowired
-    HomeServiceImpl homeService;
+    private HomeServiceImpl homeService;
 
     @Autowired
-    UserServiceImpl userService;
+    private UserServiceImpl userService;
+
+    @Autowired
+    private CategoryServiceImpl categoryService;
 
     @RequestMapping(value = {"/","/trang-chu"}, method = RequestMethod.GET)
     public ModelAndView home(){
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("user/home_body");
         modelAndView.addObject("slides", homeService.getSlides());
-        modelAndView.addObject("categories", homeService.getCategories());
+        modelAndView.addObject("categories", categoryService.getAllCategories());
+        return modelAndView;
+    }
+
+    @RequestMapping(value = {"/category/{category}"}, method = RequestMethod.GET)
+    public ModelAndView goOnCategory(@ModelAttribute String category){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("user/category_details_user");
+
         return modelAndView;
     }
 

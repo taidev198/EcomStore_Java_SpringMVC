@@ -18,7 +18,7 @@ public class CategoryDAO {
 
     public List<Category> getAllCategories() {
         List<Category> categories;
-        categories = _jdbcTemplate.query("select * from category1 ;", new CategoryMapper());
+        categories = _jdbcTemplate.query("select * from category_ecom ;", new CategoryMapper());
         return categories;
     }
 
