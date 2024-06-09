@@ -1,59 +1,63 @@
 package com.taidev198.ecomstorejavaspringmvc.entity;
 
-import java.security.Timestamp;
+import java.sql.Timestamp;
 
 public class Product {
 
     private int id;
-    private int category_id;
-    private String sizes;
-    private Double price;
-    private Double discount;
-    private String title;
-    private Boolean highlight;
-    private Boolean new_product;
-    private String detail;
-    private Timestamp created_at;
-    private Timestamp updated_at;
+    private int categoryId;
+    private String description;
+    private String content;
+    private String model;
+    private String brand;
+    private Timestamp releaseDate;
 
-    public int getCategory_id() {
-        return category_id;
+    public String getBrand() {
+        return brand;
     }
 
-    public void setCategory_id(int category_id) {
-        this.category_id = category_id;
+    public void setBrand(String brand) {
+        this.brand = brand;
     }
 
-    public Timestamp getCreated_at() {
-        return created_at;
+    public String getModel() {
+        return model;
     }
 
-    public void setCreated_at(Timestamp created_at) {
-        this.created_at = created_at;
+    public void setModel(String model) {
+        this.model = model;
     }
 
-    public String getDetail() {
-        return detail;
+    public Timestamp getReleaseDate() {
+        return releaseDate;
     }
 
-    public void setDetail(String detail) {
-        this.detail = detail;
+    public void setReleaseDate(Timestamp releaseDate) {
+        this.releaseDate = releaseDate;
     }
 
-    public Double getDiscount() {
-        return discount;
+    public int getCategoryId() {
+        return categoryId;
     }
 
-    public void setDiscount(Double discount) {
-        this.discount = discount;
+    public void setCategoryId(int categoryId) {
+        this.categoryId = categoryId;
     }
 
-    public Boolean getHighlight() {
-        return highlight;
+    public String getContent() {
+        return content;
     }
 
-    public void setHighlight(Boolean highlight) {
-        this.highlight = highlight;
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public int getId() {
@@ -62,45 +66,5 @@ public class Product {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public Boolean getNew_product() {
-        return new_product;
-    }
-
-    public void setNew_product(Boolean new_product) {
-        this.new_product = new_product;
-    }
-
-    public Double getPrice() {
-        return price;
-    }
-
-    public void setPrice(Double price) {
-        this.price = price;
-    }
-
-    public String getSizes() {
-        return sizes;
-    }
-
-    public void setSizes(String sizes) {
-        this.sizes = sizes;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public Timestamp getUpdated_at() {
-        return updated_at;
-    }
-
-    public void setUpdated_at(Timestamp updated_at) {
-        this.updated_at = updated_at;
     }
 }
