@@ -1,6 +1,7 @@
 package com.taidev198.ecomstorejavaspringmvc.controller.user;
 
 
+import com.taidev198.ecomstorejavaspringmvc.dto.ProductCategoryTypeDTO;
 import com.taidev198.ecomstorejavaspringmvc.entity.Role;
 import com.taidev198.ecomstorejavaspringmvc.entity.Status;
 import com.taidev198.ecomstorejavaspringmvc.entity.User;
@@ -13,14 +14,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.util.List;
+import java.util.*;
 
 @Controller
-public class HomeController {
+public class HomeController extends AbstractUserController{
 
     @Autowired
     private HomeServiceImpl homeService;
@@ -31,26 +33,56 @@ public class HomeController {
     @Autowired
     private CategoryServiceImpl categoryService;
 
+    private final Map<String, List<ProductCategoryTypeDTO>> map = new HashMap<>();
+
+    public void initCategory()
+     {
+        List<ProductCategoryTypeDTO> productCategoryTypeDTOList = categoryService.getAllCategories();
+
+        if (map.isEmpty()) {
+        for (ProductCategoryTypeDTO productCategoryTypeDTO : productCategoryTypeDTOList) {
+            if (map.isEmpty())
+                map.put(productCategoryTypeDTO.getProductCategoryName(), new ArrayList<>());
+            List<ProductCategoryTypeDTO> list = map.get(productCategoryTypeDTO.getProductCategoryName());
+            if (list == null) {
+                list = new ArrayList<>();
+            }
+            list.add(productCategoryTypeDTO);
+            map.put(productCategoryTypeDTO.getProductCategoryName(),list);
+        }}
+    }
+
+
     @RequestMapping(value = {"/","/trang-chu"}, method = RequestMethod.GET)
     public ModelAndView home(){
-        ModelAndView modelAndView = new ModelAndView();
+
         modelAndView.setViewName("user/home_body");
-        modelAndView.addObject("slides", homeService.getSlides());
-        modelAndView.addObject("categories", categoryService.getAllCategories());
+        initCategory();
+        modelAndView.addObject("categories", map);
         return modelAndView;
     }
 
-    @RequestMapping(value = {"/category/{category}"}, method = RequestMethod.GET)
-    public ModelAndView goOnCategory(@ModelAttribute String category){
-        ModelAndView modelAndView = new ModelAndView();
+    @RequestMapping(value = {"/category/category={category}&categorytype={categorytype}"}, method = RequestMethod.GET)
+    public ModelAndView goOnCategoryType(Model model){
+
+        initCategory();
+        modelAndView.addObject("categories", map);
         modelAndView.setViewName("user/category_details_user");
-
         return modelAndView;
     }
+
+
+//    @RequestMapping(value = {"/category/{category}"}, method = RequestMethod.GET)
+//    public ModelAndView goOnCategory(@ModelAttribute String category){
+//        ModelAndView modelAndView = new ModelAndView();
+//        modelAndView.setViewName("user/category_details_user");
+//
+//        return modelAndView;
+//    }
 
     @RequestMapping(value = {"/product"}, method = RequestMethod.GET)
     public ModelAndView product(){
-        ModelAndView modelAndView = new ModelAndView();
+
         modelAndView.setViewName("user/product_body");
         return modelAndView;
     }
@@ -58,7 +90,7 @@ public class HomeController {
     //show profile information
     @RequestMapping(value = {"/user-profile-details"})
     public ModelAndView doProfile(HttpServletRequest request, Model model){
-        ModelAndView modelAndView = new ModelAndView();
+
         HttpSession session = request.getSession();
         User userSession = (User) session.getAttribute("user");
         modelAndView.addObject("username", userSession.getUsername());
@@ -78,7 +110,7 @@ public class HomeController {
     @RequestMapping(value = {"/user-update-profile"}, method = RequestMethod.POST)
     public ModelAndView updateProfile(HttpServletRequest request,
                                       @ModelAttribute("user") User user, Model model){
-        ModelAndView modelAndView = new ModelAndView();
+
 //        User oldUser = (User) request.getSession().getAttribute("user");
 //        String oldUsername = (String) request.getSession().getAttribute("username");
 //        String oldPassword = (String) request.getSession().getAttribute("password");

@@ -1,6 +1,7 @@
 package com.taidev198.ecomstorejavaspringmvc.service.user;
 
 import com.taidev198.ecomstorejavaspringmvc.dao.CategoryDAO;
+import com.taidev198.ecomstorejavaspringmvc.dto.ProductCategoryTypeDTO;
 import com.taidev198.ecomstorejavaspringmvc.entity.Category;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,7 +15,7 @@ public class CategoryServiceImpl implements ICategoryService{
     CategoryDAO categoryDAO;
 
     @Override
-    public List<Category> getAllCategories() {
+    public List<ProductCategoryTypeDTO> getAllCategories() {
         return categoryDAO.getAllCategories();
     }
 }

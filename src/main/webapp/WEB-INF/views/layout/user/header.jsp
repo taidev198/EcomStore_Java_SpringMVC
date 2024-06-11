@@ -143,9 +143,24 @@
             <!-- NAV -->
             <ul class="main-nav nav navbar-nav">
                 <li class="active"><a href="#">Home</a></li>
+                <li>
                 <c:forEach var="category" items="${categories}">
-                    <li value="${category.id}"><a href="<c:url value="/${category.name}"/> ">${category.name}</a></li>
+                    <li>
+                    <div class="dropdown show">
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            ${category.key}
+                        </a>
+                       <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <c:forEach var="item" items="${category.value}">
+                           <li> <a class="dropdown-item" href="<c:url value="/category/category=${category.key}&categorytype=${item.getCategoryTypeName()}"/>">${item.getCategoryTypeName()}</a>
+                           </li>
+                        </c:forEach>
+                        </ul>
+                    </div>
+                         </li>
+<%--                    <li value="${category.id}"><a href="<c:url value="/${category.name}"/> ">${category.name}</a></li>--%>
                 </c:forEach>
+                </li>
             </ul>
             <!-- /NAV -->
         </div>

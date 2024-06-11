@@ -7,7 +7,16 @@ public class Order {
     private int id;
     private int userId;
     private int oderDetailsId;
+    private int orderStatusId;
     private Timestamp orderDate;
+
+    public int getOrderStatusId() {
+        return orderStatusId;
+    }
+
+    public void setOrderStatusId(int orderStatusId) {
+        this.orderStatusId = orderStatusId;
+    }
 
     public int getId() {
         return id;

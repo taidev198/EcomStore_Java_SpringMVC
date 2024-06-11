@@ -1,5 +1,6 @@
 package com.taidev198.ecomstorejavaspringmvc.service.user;
 
+import com.taidev198.ecomstorejavaspringmvc.dto.ProductCategoryTypeDTO;
 import com.taidev198.ecomstorejavaspringmvc.entity.Category;
 import com.taidev198.ecomstorejavaspringmvc.entity.Slide;
 
@@ -9,5 +10,5 @@ public interface IHomeService {
 
     List<Slide> getSlides();
 
-    List<Category> getCategories();
+    List<ProductCategoryTypeDTO> getCategories();
 }
