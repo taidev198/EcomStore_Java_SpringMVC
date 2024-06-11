@@ -8,6 +8,7 @@ import com.taidev198.ecomstorejavaspringmvc.entity.User;
 import com.taidev198.ecomstorejavaspringmvc.service.admin.UserServiceImpl;
 import com.taidev198.ecomstorejavaspringmvc.service.user.CategoryServiceImpl;
 import com.taidev198.ecomstorejavaspringmvc.service.user.HomeServiceImpl;
+import com.taidev198.ecomstorejavaspringmvc.service.user.ProductServiceImpl;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +33,9 @@ public class HomeController extends AbstractUserController{
 
     @Autowired
     private CategoryServiceImpl categoryService;
+
+    @Autowired
+    private ProductServiceImpl productService;
 
     private final Map<String, List<ProductCategoryTypeDTO>> map = new HashMap<>();
 
@@ -63,10 +67,12 @@ public class HomeController extends AbstractUserController{
     }
 
     @RequestMapping(value = {"/category/category={category}&categorytype={categorytype}"}, method = RequestMethod.GET)
-    public ModelAndView goOnCategoryType(Model model){
+    public ModelAndView goOnCategoryType(Model model, @ModelAttribute("categorytype") String categorytype, @ModelAttribute("category") String category){
 
         initCategory();
         modelAndView.addObject("categories", map);
+        modelAndView.addObject("products", productService.getProductsByCategoryType(categorytype));
+        System.out.println(productService.getProductsByCategoryType(categorytype).toString());
         modelAndView.setViewName("user/category_details_user");
         return modelAndView;
     }

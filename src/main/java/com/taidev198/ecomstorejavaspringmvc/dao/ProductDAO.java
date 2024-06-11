@@ -15,15 +15,21 @@ public class ProductDAO {
     @Autowired
     private JdbcTemplate _jdbcTemplate;
 
-    public List<Product> getProductsByCategory(int categoryId) {
+    public List<Product> getProductsByCategory(String categoryTypeName) {
         List<Product> products;
-        String sql = "select * from product_ecom where id = ?";
-        products = _jdbcTemplate.query(sql, new ProductMapper(), categoryId);
+        StringBuffer  varname1 = new StringBuffer();
+        varname1.append("select ps.ProductId, ps.ProductName, ps.ProductModel,ps.ProductDescription, ps.ProductCategoryID, ps.ProductContent from ");
+        varname1.append(" ProductCategory as pc ");
+        varname1.append("join Product_shop as ps on ps.ProductId = pc.ProductCategoryID ");
+        varname1.append("join ProductCategoryType as pct on pct.ProductCategoryID = pc.ProductCategoryID ");
+        varname1.append("join CategoryType as ct on ct.CategoryTypeID = pct.CategoryTypeID and ct.CategoryTypeName = '").append(categoryTypeName).append("' ");
+        varname1.append(";");
+        products = _jdbcTemplate.query(varname1.toString(), new ProductMapper());
         return products;
     }
 
     public void deleteProduct(int id) {
-        String sql = "delete from product_ecom where id = " + id;
+        String sql = "delete from product_shop where ProductId = " + id;
         _jdbcTemplate.update(sql);
 
     }
@@ -32,7 +38,7 @@ public class ProductDAO {
 //        StringBuilder queryBuilder = new StringBuilder();
 //        queryBuilder.append("update product_ecom set username = '"+ user.getUsername()+"', fullname = '"+user.getFullname()+"', password = '"+user.getPassword()+"', email = '"+user.getEmail()+"', number = "+user.getNumber()+", address = '"+user.getAddress()+"', statusId = "+ user.getStatusId() +", roleId = " + user.getRoleId() +" where id = "+ user.getId());
 //        _jdbcTemplate.update(queryBuilder.toString());
-        return getProductById(product.getId());
+        return getProductById(product.getProductId());
     }
 
     public Product addProduct(Product product) {
@@ -41,12 +47,12 @@ public class ProductDAO {
 //        queryBuilder.append("('"+ product.getUsername()+"', '"+user.getFullname()+"', '"+user.getPassword()+"', '"+user.getEmail()+"', '"+user.getNumber()+"', '"+user.getAddress()+"', 1, 1);");
 //          _jdbcTemplate
 //                .update(queryBuilder.toString());
-          return getProductById(product.getId());
+          return getProductById(product.getProductId());
     }
 
     public Product getProductById(int id) {
         List<Product> products;
-        StringBuilder sql = new StringBuilder("select * from product_ecom where id = "+id+";");
+        StringBuilder sql = new StringBuilder("select * from product_shop where id = "+id+";");
         System.out.println(sql);
         products = _jdbcTemplate
                 .query(sql.toString(),
@@ -58,7 +64,7 @@ public class ProductDAO {
 
     public List<Product> getAllProducts() {
         List<Product> products = new ArrayList<>();
-        String sql = "select * from product_ecom ";
+        String sql = "select * from product_shop ";
         products = _jdbcTemplate.query(sql, new ProductMapper());
 
         return products;

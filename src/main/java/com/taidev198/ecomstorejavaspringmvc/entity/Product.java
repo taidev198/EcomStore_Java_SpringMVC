@@ -4,67 +4,58 @@ import java.sql.Timestamp;
 
 public class Product {
 
-    private int id;
-    private int categoryId;
-    private String description;
-    private String content;
-    private String model;
-    private String brand;
-    private Timestamp releaseDate;
+    private int ProductId;
+    private String ProductName;
+    private String ProductContent;
+    private String ProductDescription;
+    private int ProductCategoryID;
+    private String ProductModel;
 
-    public String getBrand() {
-        return brand;
+    public int getProductCategoryID() {
+        return ProductCategoryID;
     }
 
-    public void setBrand(String brand) {
-        this.brand = brand;
+    public void setProductCategoryID(int productCategoryID) {
+        ProductCategoryID = productCategoryID;
     }
 
-    public String getModel() {
-        return model;
+    public String getProductContent() {
+        return ProductContent;
     }
 
-    public void setModel(String model) {
-        this.model = model;
+    public void setProductContent(String productContent) {
+        ProductContent = productContent;
     }
 
-    public Timestamp getReleaseDate() {
-        return releaseDate;
+    public String getProductDescription() {
+        return ProductDescription;
     }
 
-    public void setReleaseDate(Timestamp releaseDate) {
-        this.releaseDate = releaseDate;
+    public void setProductDescription(String productDescription) {
+        ProductDescription = productDescription;
     }
 
-    public int getCategoryId() {
-        return categoryId;
+    public int getProductId() {
+        return ProductId;
     }
 
-    public void setCategoryId(int categoryId) {
-        this.categoryId = categoryId;
+    public void setProductId(int productId) {
+        ProductId = productId;
     }
 
-    public String getContent() {
-        return content;
+    public String getProductModel() {
+        return ProductModel;
     }
 
-    public void setContent(String content) {
-        this.content = content;
+    public void setProductModel(String productModel) {
+        ProductModel = productModel;
     }
 
-    public String getDescription() {
-        return description;
+    public String getProductName() {
+        return ProductName;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
+    public void setProductName(String productName) {
+        ProductName = productName;
     }
 }

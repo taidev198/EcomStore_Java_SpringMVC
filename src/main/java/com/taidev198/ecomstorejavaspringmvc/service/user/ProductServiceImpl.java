@@ -39,7 +39,7 @@ public class ProductServiceImpl implements IProductService{
     }
 
     @Override
-    public List<Product> getProductsByCategory(int categoryId) {
-        return productDAO.getProductsByCategory(categoryId);
+    public List<Product> getProductsByCategoryType(String categoryTypeName) {
+        return productDAO.getProductsByCategory(categoryTypeName);
     }
 }
