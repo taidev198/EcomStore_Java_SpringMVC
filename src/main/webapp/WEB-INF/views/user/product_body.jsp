@@ -38,21 +38,11 @@
             <!-- Product main img -->
             <div class="col-md-5 col-md-push-2">
                 <div id="product-main-img">
-                    <div class="product-preview">
-                        <img src="<c:url value="/assets/user/img/product01.png"/>" alt="">
-                    </div>
-
-                    <div class="product-preview">
-                        <img src="<c:url value="/assets/user/img/product03.png"/>" alt="">
-                    </div>
-
-                    <div class="product-preview">
-                        <img src="<c:url value="/assets/user/img/product06.png"/>" alt="">
-                    </div>
-
-                    <div class="product-preview">
-                        <img src="<c:url value="/assets/user/img/product08.png"/>" alt="">
-                    </div>
+                    <c:forEach var="image" items="${images}">
+                        <div class="product-preview">
+                            <img src="<c:url value="/assets/common/img/${image.imageUrl}"/>" alt="">
+                        </div>
+                    </c:forEach>
                 </div>
             </div>
             <!-- /Product main img -->
@@ -60,21 +50,12 @@
             <!-- Product thumb imgs -->
             <div class="col-md-2  col-md-pull-5">
                 <div id="product-imgs">
-                    <div class="product-preview">
-                        <img src="<c:url value="/assets/user/img/product01.png"/>" alt="">
-                    </div>
+                    <c:forEach var="image" items="${images}">
+                        <div class="product-preview">
+                            <img src="<c:url value="/assets/common/img/${image.imageUrl}"/>" alt="">
+                        </div>
+                    </c:forEach>
 
-                    <div class="product-preview">
-                        <img src="<c:url value="/assets/user/img/product03.png"/>" alt="">
-                    </div>
-
-                    <div class="product-preview">
-                        <img src="<c:url value="/assets/user/img/product06.png"/>" alt="">
-                    </div>
-
-                    <div class="product-preview">
-                        <img src="<c:url value="/assets/user/img/product08.png"/>" alt="">
-                    </div>
                 </div>
             </div>
             <!-- /Product thumb imgs -->
@@ -82,7 +63,7 @@
             <!-- Product details -->
             <div class="col-md-5">
                 <div class="product-details">
-                    <h2 class="product-name">product name goes here</h2>
+                    <h2 class="product-name">${product.getProductName()}</h2>
                     <div>
                         <div class="product-rating">
                             <i class="fa fa-star"></i>
@@ -97,7 +78,7 @@
                         <h3 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h3>
                         <span class="product-available">In Stock</span>
                     </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <p>${product.getProductContent()}</p>
 
                     <div class="product-options">
                         <label>
@@ -358,6 +339,89 @@
                             </div>
                         </div>
                         <!-- /tab3  -->
+                    </div>
+                    <div class="parameter">
+                        <ul class="parameter__list 313333 active">
+                            <li data-index="0" data-prop="0">
+                                <p class="lileft">CPU:</p>
+                                <div class="liright">
+                                    <span class="comma">i5</span>
+                                    <span class="comma">12450H</span>
+                                    <span class="">2GHz</span>
+                                </div>
+                            </li>
+                            <li data-index="0" data-prop="0">
+                                <p class="lileft">RAM:</p>
+                                <div class="liright">
+                                    <span class="comma">16 GB</span>
+                                    <span class="comma">LPDDR5 (Onboard)</span>
+                                    <span class="">4800 MHz</span>
+                                </div>
+                            </li>
+                            <li data-index="0" data-prop="0">
+                                <p class="lileft">Ổ cứng:</p>
+                                <div class="liright">
+                                    <span class="">512 GB SSD NVMe PCIe 4.0 (Có thể tháo ra, lắp thanh khác tối đa 1 TB)</span>
+                                </div>
+                            </li>
+                            <li data-index="0" data-prop="0">
+                                <p class="lileft">Màn hình:</p>
+                                <div class="liright">
+                                    <span class="comma">15.6"</span>
+                                    <span class="">Full HD (1920 x 1080) </span>
+                                </div>
+                            </li>
+                            <li data-index="0" data-prop="0">
+                                <p class="lileft">Card màn hình:</p>
+                                <div class="liright">
+                                    <span class="comma">Card tích hợp</span>
+                                    <span class="">Intel UHD</span>
+                                </div>
+                            </li>
+                            <li data-index="0" data-prop="0">
+                                <p class="lileft">Cổng kết nối:</p>
+                                <div class="liright">
+                                    <span class="comma">Jack tai nghe 3.5 mm</span>
+                                    <span class="comma">HDMI</span>
+                                    <span class="comma">2 x USB 3.2</span>
+                                    <span class="">1x USB-C 3.2 (hỗ trợ truyền dữ liệu, Power Delivery và DisplayPort 1.2)</span>
+                                </div>
+                            </li>
+                            <li data-index="0" data-prop="0">
+                                <p class="lileft">Hệ điều hành:</p>
+                                <div class="liright">
+                                    <span class="">Windows 11 Home SL</span>
+                                </div>
+                            </li>
+                            <li data-index="0" data-prop="0">
+                                <p class="lileft">Thiết kế:</p>
+                                <div class="liright">
+                                    <span class="">Vỏ nhựa</span>
+                                </div>
+                            </li>
+                            <li data-index="0" data-prop="0">
+                                <p class="lileft">Kích thước, khối lượng:</p>
+                                <div class="liright">
+                                    <span class="">Dài 359.3 mm - Rộng 235 mm - Dày 17.9 mm - Nặng 1.62 kg</span>
+                                </div>
+                            </li>
+                            <li data-index="0" data-prop="0">
+                                <p class="lileft">Thời điểm ra mắt:</p>
+                                <div class="liright">
+                                    <span class="">2023</span>
+                                </div>
+                            </li>
+                        </ul>
+                        <span class="parameter__link__list-files__item">
+                    <a href="https://cdn.tgdd.vn/Products/PDF/3/313333/HDSD/Huong-dan-su-dung-tieng-anh.pdf" target="_blank" class="parameter__link active">
+                        <i class="icondetail-document"></i>
+                        Hướng Dẫn Sử Dụng Tiếng Anh
+                    </a>
+                    <span>[PDF, 5MB]</span>
+                </span>
+                        <span class="btn-detail btn-short-spec ">
+                    <span>Xem thêm cấu hình chi tiết</span>
+            </span>
                     </div>
                     <!-- /product tab content  -->
                 </div>

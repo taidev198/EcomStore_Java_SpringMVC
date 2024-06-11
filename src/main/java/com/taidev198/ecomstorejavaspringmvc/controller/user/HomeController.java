@@ -91,7 +91,8 @@ public class HomeController extends AbstractUserController{
 //    }
 
     @RequestMapping(value = {"/product/productId={ProductId}"}, method = RequestMethod.GET)
-    public ModelAndView product(@ModelAttribute("ProductId") int ProductId){
+    public ModelAndView goOnProduct(@ModelAttribute("ProductId") int ProductId){
+        modelAndView.addObject("images", imageService.getImagesByProductId((long) ProductId));
         modelAndView.addObject("product", productService.getProductById(ProductId));
         modelAndView.setViewName("user/product_body");
         return modelAndView;
