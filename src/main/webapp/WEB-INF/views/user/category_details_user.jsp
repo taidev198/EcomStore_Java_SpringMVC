@@ -182,11 +182,16 @@
 
                 <!-- store products -->
                 <div class="row">
+                    <c:forEach var="product" items="${products}">
                     <!-- product -->
                     <div class="col-md-4 col-xs-6">
                         <div class="product">
                             <div class="product-img">
-                                <img src="./img/product01.png" alt="">
+                                <img
+                                <c:forEach var="avatar" items="${avatars}">
+                                <c:if test="${avatar.getProductId() == product.getProductId()}"> src="<c:url value="/assets/common/img/${avatar.imageUrl}"/>"
+                                </c:if>
+                                </c:forEach> alt="">
                                 <div class="product-label">
                                     <span class="sale">-30%</span>
                                     <span class="new">NEW</span>
@@ -194,13 +199,9 @@
                             </div>
                             <div class="product-body">
                                 <p class="product-category">Category</p>
-                                <h3 class="product-name"><a href="#">product name goes here</a></h3>
+                                <h3 class="product-name"><a href="<c:url value="/product/productId=${product.getProductId()}"/>">${product.getProductName()}</a></h3>
                                 <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
                                 <div class="product-rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
                                     <i class="fa fa-star"></i>
                                 </div>
                                 <div class="product-btns">
@@ -214,6 +215,7 @@
                             </div>
                         </div>
                     </div>
+                    </c:forEach>
                     <!-- /product -->
 
 <%--                    <!-- product -->--%>

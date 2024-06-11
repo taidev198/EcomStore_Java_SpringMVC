@@ -23,7 +23,7 @@ public class ProductDAO {
         varname1.append("join Product_shop as ps on ps.ProductId = pc.ProductCategoryID ");
         varname1.append("join ProductCategoryType as pct on pct.ProductCategoryID = pc.ProductCategoryID ");
         varname1.append("join CategoryType as ct on ct.CategoryTypeID = pct.CategoryTypeID and ct.CategoryTypeName = '").append(categoryTypeName).append("' ");
-        varname1.append(";");
+        varname1.append(" order by ps.ProductId asc ;");
         products = _jdbcTemplate.query(varname1.toString(), new ProductMapper());
         return products;
     }
@@ -52,7 +52,7 @@ public class ProductDAO {
 
     public Product getProductById(int id) {
         List<Product> products;
-        StringBuilder sql = new StringBuilder("select * from product_shop where id = "+id+";");
+        StringBuilder sql = new StringBuilder("select * from product_shop where ProductId = "+id+";");
         System.out.println(sql);
         products = _jdbcTemplate
                 .query(sql.toString(),

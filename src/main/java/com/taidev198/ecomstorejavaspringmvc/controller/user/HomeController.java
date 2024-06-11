@@ -8,6 +8,7 @@ import com.taidev198.ecomstorejavaspringmvc.entity.User;
 import com.taidev198.ecomstorejavaspringmvc.service.admin.UserServiceImpl;
 import com.taidev198.ecomstorejavaspringmvc.service.user.CategoryServiceImpl;
 import com.taidev198.ecomstorejavaspringmvc.service.user.HomeServiceImpl;
+import com.taidev198.ecomstorejavaspringmvc.service.user.ImageServiceImpl;
 import com.taidev198.ecomstorejavaspringmvc.service.user.ProductServiceImpl;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
@@ -36,6 +37,9 @@ public class HomeController extends AbstractUserController{
 
     @Autowired
     private ProductServiceImpl productService;
+
+    @Autowired
+    private ImageServiceImpl imageService;
 
     private final Map<String, List<ProductCategoryTypeDTO>> map = new HashMap<>();
 
@@ -72,11 +76,11 @@ public class HomeController extends AbstractUserController{
         initCategory();
         modelAndView.addObject("categories", map);
         modelAndView.addObject("products", productService.getProductsByCategoryType(categorytype));
-        System.out.println(productService.getProductsByCategoryType(categorytype).toString());
+        modelAndView.addObject("avatars", imageService.getAvatarImages());
+//        System.out.println(productService.getProductsByCategoryType(categorytype).toString());
         modelAndView.setViewName("user/category_details_user");
         return modelAndView;
     }
-
 
 //    @RequestMapping(value = {"/category/{category}"}, method = RequestMethod.GET)
 //    public ModelAndView goOnCategory(@ModelAttribute String category){
@@ -86,9 +90,9 @@ public class HomeController extends AbstractUserController{
 //        return modelAndView;
 //    }
 
-    @RequestMapping(value = {"/product"}, method = RequestMethod.GET)
-    public ModelAndView product(){
-
+    @RequestMapping(value = {"/product/productId={ProductId}"}, method = RequestMethod.GET)
+    public ModelAndView product(@ModelAttribute("ProductId") int ProductId){
+        modelAndView.addObject("product", productService.getProductById(ProductId));
         modelAndView.setViewName("user/product_body");
         return modelAndView;
     }

@@ -142,7 +142,7 @@
         <div id="responsive-nav">
             <!-- NAV -->
             <ul class="main-nav nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
+                <li class="active"><a href="<c:url value="/trang-chu" />">Home</a></li>
                 <li>
                 <c:forEach var="category" items="${categories}">
                     <li>
