@@ -1,5 +1,7 @@
 package com.taidev198.ecomstorejavaspringmvc.dao;
 
+import com.taidev198.ecomstorejavaspringmvc.dto.CategoryBrandDTO;
+import com.taidev198.ecomstorejavaspringmvc.dto.CategoryBrandDTOMapper;
 import com.taidev198.ecomstorejavaspringmvc.dto.ProductCategoryTypeDTO;
 import com.taidev198.ecomstorejavaspringmvc.dto.ProductCategoryTypeDTOMapper;
 import com.taidev198.ecomstorejavaspringmvc.entity.Category;
@@ -25,6 +27,20 @@ public class CategoryDAO {
         varname1.append("join CategoryType as ct on ct.CategoryTypeID = pct.CategoryTypeID;");
         categories = _jdbcTemplate.query(varname1.toString(), new ProductCategoryTypeDTOMapper());
         return categories;
+    }
+
+    public List<CategoryBrandDTO> getAllCategoriesBrands() {
+        List<CategoryBrandDTO> categories;
+        StringBuffer  varname1 = new StringBuffer();
+        varname1.append("select count(ps.ProductId) as NumberProductsOfBrand, av.AttributeValueName from ");
+        varname1.append(" ProductAttributeValue as pav ");
+        varname1.append("join Product_shop as ps on pav.ProductId = ps.ProductId ");
+        varname1.append("join AttributeValue as av on pav.AttributeValueID = av.AttributeValueID ");
+        varname1.append("join Attribute as a on a.AttributeID = av.AttributeID and a.AttributeName = 'Brand' ");
+        varname1.append("group by av.AttributeValueName ");
+        varname1.append(";");
+
+        return _jdbcTemplate.query(varname1.toString(), new CategoryBrandDTOMapper());
     }
 
 }

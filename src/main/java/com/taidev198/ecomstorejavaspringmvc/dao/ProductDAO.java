@@ -28,6 +28,19 @@ public class ProductDAO {
         return products;
     }
 
+    public List<Product> getProductsByBrands(String brandTypeName) {
+        List<Product> products;
+        StringBuffer  varname1 = new StringBuffer();
+        varname1.append("select ps.ProductId, ps.ProductName, ps.ProductModel,ps.ProductDescription, ps.ProductCategoryID, ps.ProductContent from ");
+        varname1.append(" ProductCategory as pc ");
+        varname1.append("join Product_shop as ps on ps.ProductId = pc.ProductCategoryID ");
+        varname1.append("join ProductCategoryType as pct on pct.ProductCategoryID = pc.ProductCategoryID ");
+        varname1.append("join CategoryType as ct on ct.CategoryTypeID = pct.CategoryTypeID and ct.CategoryTypeName = '").append(brandTypeName).append("' ");
+        varname1.append(" order by ps.ProductId asc ;");
+        products = _jdbcTemplate.query(varname1.toString(), new ProductMapper());
+        return products;
+    }
+
     public void deleteProduct(int id) {
         String sql = "delete from product_shop where ProductId = " + id;
         _jdbcTemplate.update(sql);

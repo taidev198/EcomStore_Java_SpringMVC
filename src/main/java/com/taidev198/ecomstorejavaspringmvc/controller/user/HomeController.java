@@ -1,8 +1,10 @@
 package com.taidev198.ecomstorejavaspringmvc.controller.user;
 
 
+import com.taidev198.ecomstorejavaspringmvc.dto.CategoryBrandDTO;
 import com.taidev198.ecomstorejavaspringmvc.dto.ProductAttributeValueDTO;
 import com.taidev198.ecomstorejavaspringmvc.dto.ProductCategoryTypeDTO;
+import com.taidev198.ecomstorejavaspringmvc.entity.ItemCheckBox;
 import com.taidev198.ecomstorejavaspringmvc.entity.Product;
 import com.taidev198.ecomstorejavaspringmvc.entity.User;
 import com.taidev198.ecomstorejavaspringmvc.service.admin.UserServiceImpl;
@@ -41,9 +43,11 @@ public class HomeController extends AbstractUserController{
     private ProductAttributeValueServiceImpl productAttributeValueService;
 
     private final Map<String, List<ProductCategoryTypeDTO>> map = new HashMap<>();
+    private List<CategoryBrandDTO> categoryBrandDTOList = new ArrayList<>();
 
     public void initCategory()
      {
+         categoryBrandDTOList = categoryService.getAllBrands();
         List<ProductCategoryTypeDTO> productCategoryTypeDTOList = categoryService.getAllCategories();
 
         if (map.isEmpty()) {
@@ -91,10 +95,33 @@ public class HomeController extends AbstractUserController{
     }
 
     @RequestMapping(value = {"/category/category={category}&categorytype={categorytype}"}, method = RequestMethod.GET)
-    public ModelAndView goOnCategoryType(Model model, @ModelAttribute("categorytype") String categorytype, @ModelAttribute("category") String category){
+    public ModelAndView goOnCategoryType(Model model,
+                                         @ModelAttribute("categorytype") String categorytype,
+                                         @ModelAttribute("category") String category,
+                                         HttpServletRequest request){
 
+        ItemCheckBox itemCheckBox = new ItemCheckBox();
         initCategory();
+        request.setAttribute("__SELF",request.getRequestURI());
         modelAndView.addObject("categories", map);
+        modelAndView.addObject("listBrandFilter", itemCheckBox);
+        modelAndView.addObject("brands", categoryBrandDTOList);
+        modelAndView.addObject("products", setProductAttributeValues(productService.getProductsByCategoryType(categorytype)));
+        modelAndView.addObject("avatars", imageService.getAvatarImages());
+//        System.out.println(productService.getProductsByCategoryType(categorytype).toString());
+        modelAndView.setViewName("user/category_details_user");
+        return modelAndView;
+    }
+
+    @RequestMapping(value = {"/category/category={category}&categorytype={categorytype}/filterByBrand?listBrandName={brand}"}, method = RequestMethod.POST)
+    public ModelAndView filterByCategoryTypeBrand(Model model,
+                                                  @ModelAttribute("categorytype") String categorytype,
+                                                  @ModelAttribute("category") String category,
+                                                  @ModelAttribute("brand") String brand){
+        initCategory();
+        System.out.println("filterByBrand "+brand);
+        modelAndView.addObject("categories", map);
+        modelAndView.addObject("brands", categoryBrandDTOList);
         modelAndView.addObject("products", setProductAttributeValues(productService.getProductsByCategoryType(categorytype)));
         modelAndView.addObject("avatars", imageService.getAvatarImages());
 //        System.out.println(productService.getProductsByCategoryType(categorytype).toString());
