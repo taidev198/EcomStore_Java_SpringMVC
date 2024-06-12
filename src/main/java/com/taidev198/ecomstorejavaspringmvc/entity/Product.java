@@ -1,10 +1,13 @@
 package com.taidev198.ecomstorejavaspringmvc.entity;
 
 import com.taidev198.ecomstorejavaspringmvc.dto.ProductAttributeValueDTO;
+import com.taidev198.ecomstorejavaspringmvc.dto.ProductVariantsValueDTO;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Product {
 
@@ -15,6 +18,15 @@ public class Product {
     private int ProductCategoryID;
     private String ProductModel;
     private List<ProductAttributeValueDTO> productAttributeValues = new ArrayList<>();
+    private Map<String, List<ProductVariantsValueDTO>> productVariants = new HashMap<>();
+
+    public Map<String, List<ProductVariantsValueDTO>> getProductVariants() {
+        return productVariants;
+    }
+
+    public void setProductVariants(Map<String, List<ProductVariantsValueDTO>> productVariants) {
+        this.productVariants = productVariants;
+    }
 
     public List<ProductAttributeValueDTO> getProductAttributeValues() {
         return productAttributeValues;

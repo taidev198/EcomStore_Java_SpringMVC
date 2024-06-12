@@ -9,6 +9,7 @@ import com.taidev198.ecomstorejavaspringmvc.entity.Product;
 import com.taidev198.ecomstorejavaspringmvc.entity.User;
 import com.taidev198.ecomstorejavaspringmvc.service.admin.UserServiceImpl;
 import com.taidev198.ecomstorejavaspringmvc.service.user.*;
+import com.taidev198.ecomstorejavaspringmvc.util.HomeUserUtils;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,6 +42,10 @@ public class HomeController extends AbstractUserController{
 
     @Autowired
     private ProductAttributeValueServiceImpl productAttributeValueService;
+
+    @Autowired
+    private ProductVariantsValueServiceImpl
+    productVariantsValueService;
 
     private final Map<String, List<ProductCategoryTypeDTO>> map = new HashMap<>();
     private List<CategoryBrandDTO> categoryBrandDTOList = new ArrayList<>();
@@ -140,7 +145,9 @@ public class HomeController extends AbstractUserController{
     @RequestMapping(value = {"/product/productId={ProductId}"}, method = RequestMethod.GET)
     public ModelAndView goOnProduct(@ModelAttribute("ProductId") int ProductId){
         modelAndView.addObject("images", imageService.getImagesByProductId((long) ProductId));
-        modelAndView.addObject("product", productService.getProductById(ProductId));
+        Product product = productService.getProductById(ProductId);
+        HomeUserUtils.setProductVariantsValue(productVariantsValueService.getProductVariantsValuesByProductId((long) ProductId),product);
+        modelAndView.addObject("product", product);
         modelAndView.addObject("attributes", productAttributeValueService.getProductAttributeValueByProductId((long) ProductId));
         modelAndView.setViewName("user/product_body");
         return modelAndView;

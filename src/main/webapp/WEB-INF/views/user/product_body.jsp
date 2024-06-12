@@ -81,18 +81,16 @@
                     <p>${product.getProductContent()}</p>
 
                     <div class="product-options">
+                        <c:forEach var="variants" items="${product.getProductVariants()}">
                         <label>
-                            Size
-                            <select class="input-select">
-                                <option value="0">X</option>
-                            </select>
+                            ${variants.key}
+                                <select class="input-select">
+                            <c:forEach var="variant" items="${variants.value}">
+                                <option value="0">${variant.variantsValueName}</option>
+                            </c:forEach>
+                                </select>
                         </label>
-                        <label>
-                            Color
-                            <select class="input-select">
-                                <option value="0">Red</option>
-                            </select>
-                        </label>
+                        </c:forEach>
                     </div>
 
                     <div class="add-to-cart">
