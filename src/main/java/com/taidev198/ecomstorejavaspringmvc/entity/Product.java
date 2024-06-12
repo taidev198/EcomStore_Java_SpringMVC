@@ -1,6 +1,10 @@
 package com.taidev198.ecomstorejavaspringmvc.entity;
 
+import com.taidev198.ecomstorejavaspringmvc.dto.ProductAttributeValueDTO;
+
 import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Product {
 
@@ -10,6 +14,15 @@ public class Product {
     private String ProductDescription;
     private int ProductCategoryID;
     private String ProductModel;
+    private List<ProductAttributeValueDTO> productAttributeValues = new ArrayList<>();
+
+    public List<ProductAttributeValueDTO> getProductAttributeValues() {
+        return productAttributeValues;
+    }
+
+    public void setProductAttributeValues(List<ProductAttributeValueDTO> productAttributeValues) {
+        this.productAttributeValues = productAttributeValues;
+    }
 
     public int getProductCategoryID() {
         return ProductCategoryID;

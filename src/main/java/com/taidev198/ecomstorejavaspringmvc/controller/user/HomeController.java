@@ -1,22 +1,18 @@
 package com.taidev198.ecomstorejavaspringmvc.controller.user;
 
 
+import com.taidev198.ecomstorejavaspringmvc.dto.ProductAttributeValueDTO;
 import com.taidev198.ecomstorejavaspringmvc.dto.ProductCategoryTypeDTO;
-import com.taidev198.ecomstorejavaspringmvc.entity.Role;
-import com.taidev198.ecomstorejavaspringmvc.entity.Status;
+import com.taidev198.ecomstorejavaspringmvc.entity.Product;
 import com.taidev198.ecomstorejavaspringmvc.entity.User;
 import com.taidev198.ecomstorejavaspringmvc.service.admin.UserServiceImpl;
-import com.taidev198.ecomstorejavaspringmvc.service.user.CategoryServiceImpl;
-import com.taidev198.ecomstorejavaspringmvc.service.user.HomeServiceImpl;
-import com.taidev198.ecomstorejavaspringmvc.service.user.ImageServiceImpl;
-import com.taidev198.ecomstorejavaspringmvc.service.user.ProductServiceImpl;
+import com.taidev198.ecomstorejavaspringmvc.service.user.*;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -41,6 +37,9 @@ public class HomeController extends AbstractUserController{
     @Autowired
     private ImageServiceImpl imageService;
 
+    @Autowired
+    private ProductAttributeValueServiceImpl productAttributeValueService;
+
     private final Map<String, List<ProductCategoryTypeDTO>> map = new HashMap<>();
 
     public void initCategory()
@@ -60,6 +59,27 @@ public class HomeController extends AbstractUserController{
         }}
     }
 
+    public List<Product> setProductAttributeValues(List<Product> productList) {
+        List<ProductAttributeValueDTO> list = productAttributeValueService.getAllProductAttributeValue();
+        Map<Integer, List<ProductAttributeValueDTO>> map1 = new HashMap<>();
+        for (ProductAttributeValueDTO productAttributeValueDTO : list) {
+            if (map1.isEmpty())
+                map1.put(productAttributeValueDTO.getProductId(), new ArrayList<>());
+            List<ProductAttributeValueDTO> rs = map1.get(productAttributeValueDTO.getProductId());
+//            List<ProductAttributeValueDTO> rs1 = (productList.get(productAttributeValueDTO.getProductId()).get);
+            if (rs == null ) {
+                rs = new ArrayList<>();
+            }
+            rs.add(productAttributeValueDTO);
+            for (Product product : productList) {
+                if (product.getProductId() == productAttributeValueDTO.getProductId()) {
+                    product.setProductAttributeValues(list);
+                }
+            }
+        }
+        return productList;
+    }
+
 
     @RequestMapping(value = {"/","/trang-chu"}, method = RequestMethod.GET)
     public ModelAndView home(){
@@ -75,7 +95,7 @@ public class HomeController extends AbstractUserController{
 
         initCategory();
         modelAndView.addObject("categories", map);
-        modelAndView.addObject("products", productService.getProductsByCategoryType(categorytype));
+        modelAndView.addObject("products", setProductAttributeValues(productService.getProductsByCategoryType(categorytype)));
         modelAndView.addObject("avatars", imageService.getAvatarImages());
 //        System.out.println(productService.getProductsByCategoryType(categorytype).toString());
         modelAndView.setViewName("user/category_details_user");
@@ -94,6 +114,7 @@ public class HomeController extends AbstractUserController{
     public ModelAndView goOnProduct(@ModelAttribute("ProductId") int ProductId){
         modelAndView.addObject("images", imageService.getImagesByProductId((long) ProductId));
         modelAndView.addObject("product", productService.getProductById(ProductId));
+        modelAndView.addObject("attributes", productAttributeValueService.getProductAttributeValueByProductId((long) ProductId));
         modelAndView.setViewName("user/product_body");
         return modelAndView;
     }
