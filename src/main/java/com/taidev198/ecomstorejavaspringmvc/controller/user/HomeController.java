@@ -4,6 +4,7 @@ package com.taidev198.ecomstorejavaspringmvc.controller.user;
 import com.taidev198.ecomstorejavaspringmvc.dto.CategoryBrandDTO;
 import com.taidev198.ecomstorejavaspringmvc.dto.ProductAttributeValueDTO;
 import com.taidev198.ecomstorejavaspringmvc.dto.ProductCategoryTypeDTO;
+import com.taidev198.ecomstorejavaspringmvc.dto.ProductVariantsValueDTO;
 import com.taidev198.ecomstorejavaspringmvc.entity.ItemCheckBox;
 import com.taidev198.ecomstorejavaspringmvc.entity.Product;
 import com.taidev198.ecomstorejavaspringmvc.entity.User;
@@ -70,6 +71,7 @@ public class HomeController extends AbstractUserController{
 
     public List<Product> setProductAttributeValues(List<Product> productList) {
         List<ProductAttributeValueDTO> list = productAttributeValueService.getAllProductAttributeValue();
+        List<ProductVariantsValueDTO> productVariantsValueDTOList = new ArrayList<>();
         Map<Integer, List<ProductAttributeValueDTO>> map1 = new HashMap<>();
         for (ProductAttributeValueDTO productAttributeValueDTO : list) {
             if (map1.isEmpty())
@@ -82,6 +84,7 @@ public class HomeController extends AbstractUserController{
             rs.add(productAttributeValueDTO);
             for (Product product : productList) {
                 if (product.getProductId() == productAttributeValueDTO.getProductId()) {
+                    product.setProductVariantsValues(productVariantsValueService.getProductVariantsValuesByProductId((long) product.getProductId()));
                     product.setProductAttributeValues(list);
                 }
             }

@@ -19,6 +19,15 @@ public class Product {
     private String ProductModel;
     private List<ProductAttributeValueDTO> productAttributeValues = new ArrayList<>();
     private Map<String, List<ProductVariantsValueDTO>> productVariants = new HashMap<>();
+    private List<ProductVariantsValueDTO> productVariantsValues = new ArrayList<>();
+
+    public List<ProductVariantsValueDTO> getProductVariantsValues() {
+        return productVariantsValues;
+    }
+
+    public void setProductVariantsValues(List<ProductVariantsValueDTO> productVariantsValues) {
+        this.productVariantsValues = productVariantsValues;
+    }
 
     public Map<String, List<ProductVariantsValueDTO>> getProductVariants() {
         return productVariants;

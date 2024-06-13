@@ -7,9 +7,36 @@ public class ProductVariantsValueDTO {
     private String variantsValueName;
     private double productVariantsValuePrice;
     private int productVariantsValueStock;
+    private int VariantsValue2ID;
+    private String variantsValueName1;
+    private int ProductVariantsValueID;
+
+    public String getVariantsValueName1() {
+        return variantsValueName1;
+    }
+
+    public void setVariantsValueName1(String variantsValueName1) {
+        this.variantsValueName1 = variantsValueName1;
+    }
+
+    public int getProductVariantsValueID() {
+        return ProductVariantsValueID;
+    }
+
+    public void setProductVariantsValueID(int productVariantsValueID) {
+        ProductVariantsValueID = productVariantsValueID;
+    }
 
     public int getProductId() {
         return productId;
+    }
+
+    public int getVariantsValue2ID() {
+        return VariantsValue2ID;
+    }
+
+    public void setVariantsValue2ID(int variantsValue2ID) {
+        VariantsValue2ID = variantsValue2ID;
     }
 
     public void setProductId(int productId) {
