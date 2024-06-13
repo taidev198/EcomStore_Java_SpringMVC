@@ -75,7 +75,8 @@
                         <a class="review-link" href="#">10 Review(s) | Add your review</a>
                     </div>
                     <div>
-                        <h3 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h3>
+                        <h3 class="product-price">$ ${product.getProductVariantsValues().get(0).getProductVariantsValuePrice()}
+                            <del class="product-old-price">$990.00</del></h3>
                         <span class="product-available">In Stock</span>
                     </div>
                     <p>${product.getProductContent()}</p>
@@ -84,9 +85,9 @@
                         <c:forEach var="variants" items="${product.getProductVariants()}">
                         <label>
                             ${variants.key}
-                                <select class="input-select">
+                                <select class="input-select" name="${variants.key}">
                             <c:forEach var="variant" items="${variants.value}">
-                                <option value="0">${variant.variantsValueName}</option>
+                                <option value="${variant}" >${variant}</option>
                             </c:forEach>
                                 </select>
                         </label>

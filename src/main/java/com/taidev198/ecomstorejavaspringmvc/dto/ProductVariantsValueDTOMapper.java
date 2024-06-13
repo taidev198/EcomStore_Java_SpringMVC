@@ -17,7 +17,8 @@ public class ProductVariantsValueDTOMapper implements RowMapper<ProductVariantsV
         productVariantsValueDTO.setVariantsValueName(rs.getString("VariantsValueName"));
         productVariantsValueDTO.setProductVariantsValuePrice(rs.getDouble("ProductVariantsValuePrice"));
         productVariantsValueDTO.setProductVariantsValueStock(rs.getInt("ProductVariantsValueStock"));
-        productVariantsValueDTO.setVariantsValueName1(rs.getString("VariantsName1"));
+        productVariantsValueDTO.setVariantsValueName1(rs.getString("VariantsValueName1"));
+        productVariantsValueDTO.setVariantsName1(rs.getString("VariantsName1"));
         productVariantsValueDTO.setProductVariantsValueID(rs.getInt("ProductVariantsValueID"));
 
         return productVariantsValueDTO;

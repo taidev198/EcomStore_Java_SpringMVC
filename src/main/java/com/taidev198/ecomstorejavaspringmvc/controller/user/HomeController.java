@@ -149,7 +149,9 @@ public class HomeController extends AbstractUserController{
     public ModelAndView goOnProduct(@ModelAttribute("ProductId") int ProductId){
         modelAndView.addObject("images", imageService.getImagesByProductId((long) ProductId));
         Product product = productService.getProductById(ProductId);
-        HomeUserUtils.setProductVariantsValue(productVariantsValueService.getProductVariantsValuesByProductId((long) ProductId),product);
+        List<ProductVariantsValueDTO> productVariantsValueDTOList = productVariantsValueService.getProductVariantsValuesByProductId((long) ProductId);
+        product.setProductVariantsValues(productVariantsValueDTOList);
+        HomeUserUtils.setProductVariantsValue(productVariantsValueDTOList, product);
         modelAndView.addObject("product", product);
         modelAndView.addObject("attributes", productAttributeValueService.getProductAttributeValueByProductId((long) ProductId));
         modelAndView.setViewName("user/product_body");

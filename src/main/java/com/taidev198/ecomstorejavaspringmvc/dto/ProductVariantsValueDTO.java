@@ -4,12 +4,21 @@ public class ProductVariantsValueDTO {
 
     private int productId;
     private String variantsName;
+    private String variantsName1;
     private String variantsValueName;
     private double productVariantsValuePrice;
     private int productVariantsValueStock;
     private int VariantsValue2ID;
     private String variantsValueName1;
     private int ProductVariantsValueID;
+
+    public String getVariantsName1() {
+        return variantsName1;
+    }
+
+    public void setVariantsName1(String variantsName1) {
+        this.variantsName1 = variantsName1;
+    }
 
     public String getVariantsValueName1() {
         return variantsValueName1;

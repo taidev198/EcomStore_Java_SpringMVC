@@ -19,7 +19,7 @@ public class ProductVariantsValueDAO {
     public List<ProductVariantsValueDTO> getProductVariantsValuesByProductId(Long productId) {
         StringBuffer  varname1 = new StringBuffer();
         varname1.append("select ps.ProductId,pvv.ProductVariantsValueID, v.VariantsName, av.VariantsValueName, ");
-        varname1.append(" v1.VariantsName as VariantsName1, av1.VariantsValueName, pvv.ProductVariantsValuePrice, ");
+        varname1.append(" v1.VariantsName as VariantsName1, av1.VariantsValueName as VariantsValueName1, pvv.ProductVariantsValuePrice, ");
         varname1.append(" pvv.ProductVariantsValueStock ");
         varname1.append("from Variants as v ");
         varname1.append("join VariantsValue as av on v.VariantsID = av.VariantsID ");

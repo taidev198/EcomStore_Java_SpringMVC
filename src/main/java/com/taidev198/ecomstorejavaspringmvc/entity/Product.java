@@ -4,10 +4,7 @@ import com.taidev198.ecomstorejavaspringmvc.dto.ProductAttributeValueDTO;
 import com.taidev198.ecomstorejavaspringmvc.dto.ProductVariantsValueDTO;
 
 import java.sql.Timestamp;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Product {
 
@@ -18,7 +15,7 @@ public class Product {
     private int ProductCategoryID;
     private String ProductModel;
     private List<ProductAttributeValueDTO> productAttributeValues = new ArrayList<>();
-    private Map<String, List<ProductVariantsValueDTO>> productVariants = new HashMap<>();
+    private Map<String, HashSet<String>> productVariants = new HashMap<>();
     private List<ProductVariantsValueDTO> productVariantsValues = new ArrayList<>();
 
     public List<ProductVariantsValueDTO> getProductVariantsValues() {
@@ -29,11 +26,11 @@ public class Product {
         this.productVariantsValues = productVariantsValues;
     }
 
-    public Map<String, List<ProductVariantsValueDTO>> getProductVariants() {
+    public Map<String, HashSet<String>> getProductVariants() {
         return productVariants;
     }
 
-    public void setProductVariants(Map<String, List<ProductVariantsValueDTO>> productVariants) {
+    public void setProductVariants(Map<String, HashSet<String>> productVariants) {
         this.productVariants = productVariants;
     }
 
