@@ -1,6 +1,5 @@
 package com.taidev198.ecomstorejavaspringmvc.util;
 
-import com.taidev198.ecomstorejavaspringmvc.dto.ProductAttributeValueDTO;
 import com.taidev198.ecomstorejavaspringmvc.dto.ProductVariantsValueDTO;
 import com.taidev198.ecomstorejavaspringmvc.entity.Product;
 
@@ -9,7 +8,7 @@ import java.util.*;
 public class HomeUserUtils {
 
 
-    public static void setProductVariantsValue(List<ProductVariantsValueDTO> productVariantsValueDTOList, Product product) {
+    public static void setProductVariants(List<ProductVariantsValueDTO> productVariantsValueDTOList, Product product) {
 
         Map<String, HashSet<String>> productAttributeValuesByCategory = new HashMap<>();
         for (ProductVariantsValueDTO productVariantsValueDTO : productVariantsValueDTOList) {
@@ -24,6 +23,7 @@ public class HomeUserUtils {
                 rs = new HashSet<>();
                 rs1 = new HashSet<>();
             }
+            System.out.println(productVariantsValueDTO.getVariantsValueName());
             rs.add(productVariantsValueDTO.getVariantsValueName());
             rs1.add(productVariantsValueDTO.getVariantsValueName1());
             productAttributeValuesByCategory.put(productVariantsValueDTO.getVariantsName(), rs);

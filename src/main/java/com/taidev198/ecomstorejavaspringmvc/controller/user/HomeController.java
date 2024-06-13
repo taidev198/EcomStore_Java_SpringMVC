@@ -151,7 +151,7 @@ public class HomeController extends AbstractUserController{
         Product product = productService.getProductById(ProductId);
         List<ProductVariantsValueDTO> productVariantsValueDTOList = productVariantsValueService.getProductVariantsValuesByProductId((long) ProductId);
         product.setProductVariantsValues(productVariantsValueDTOList);
-        HomeUserUtils.setProductVariantsValue(productVariantsValueDTOList, product);
+        HomeUserUtils.setProductVariants(productVariantsValueDTOList, product);
         modelAndView.addObject("product", product);
         modelAndView.addObject("attributes", productAttributeValueService.getProductAttributeValueByProductId((long) ProductId));
         modelAndView.setViewName("user/product_body");

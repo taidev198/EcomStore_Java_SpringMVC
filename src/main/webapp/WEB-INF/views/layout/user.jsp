@@ -64,13 +64,31 @@
 <script src="<c:url value="/assets/user/js/main.js"/>"></script>
 <script>
     for (let i =0; i< ${product.getProductVariants().size()}; i++) {
-        var id = '#variant' + i;
-        $(id).click(function() {
+        let id = '#variant' + i;
+        console.log(id);
+        $(id).change(function() {
             this.style.color = "blue";
-            console.log($(id).val())
+            console.log(id);
+            console.log($(id).val());
+            checkPrice(id);
+
         });
     }
-</script>
 
-</body>
-</html>
+    function checkPrice(id) {
+        <c:forEach var="variants" items="${product.getProductVariantsValues()}" varStatus="index">
+            console.log('${variants.getVariantsValueName1()}' === $(id).val())
+            console.log($(id).val() +'id')
+            console.log('${variants.getVariantsValueName1()}' + 'product')
+            if ('${variants.getVariantsValueName1()}' === $(id).val()){
+            $('#price').html('$' + ${variants.getProductVariantsValuePrice()});
+                console.log($('#price').val() + 'price')
+                console.log(${variants.getProductVariantsValuePrice()} + 'setprice')
+            }
+        </c:forEach>
+    }
+
+    </script>
+
+    </body>
+    </html>
