@@ -82,12 +82,12 @@
                     <p>${product.getProductContent()}</p>
 
                     <div class="product-options">
-                        <c:forEach var="variants" items="${product.getProductVariants()}">
+                        <c:forEach var="variants" items="${product.getProductVariants()}" varStatus="index">
                         <label>
                             ${variants.key}
-                                <select class="input-select" name="${variants.key}">
-                            <c:forEach var="variant" items="${variants.value}">
-                                <option value="${variant}" >${variant}</option>
+                                <select class="input-select" name="variant${index.index}" id="variant${index.index}" >
+                            <c:forEach var="variant" items="${variants.value}" varStatus="status">
+                                <option value="${variant}" <c:if test="${status.first}">selected="selected"</c:if> >${variant}</option>
                             </c:forEach>
                                 </select>
                         </label>
@@ -493,3 +493,4 @@
     <!-- /container -->
 </div>
 <!-- /Section -->
+

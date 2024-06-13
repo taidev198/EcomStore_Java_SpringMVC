@@ -62,6 +62,15 @@
 <script src="<c:url value="/assets/user/js/nouislider.min.js"/>"></script>
 <script src="<c:url value="/assets/user/js/jquery.zoom.min.js"/>"></script>
 <script src="<c:url value="/assets/user/js/main.js"/>"></script>
+<script>
+    for (let i =0; i< ${product.getProductVariants().size()}; i++) {
+        var id = '#variant' + i;
+        $(id).click(function() {
+            this.style.color = "blue";
+            console.log($(id).val())
+        });
+    }
+</script>
 
 </body>
 </html>
