@@ -87,7 +87,7 @@
                             ${variants.key}
                                 <select class="input-select" name="variant${index.index}" id="variant${index.index}" >
                             <c:forEach var="variant" items="${variants.value}" varStatus="status">
-                                <option value="${variant}" <c:if test="${status.first}">selected="selected"</c:if> >${variant}</option>
+                                    <option value="${variant}" <c:if test="${status.first}">selected="selected"</c:if> >${variant}</option>
                             </c:forEach>
                                 </select>
                         </label>

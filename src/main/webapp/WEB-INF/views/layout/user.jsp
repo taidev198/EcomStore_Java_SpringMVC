@@ -65,25 +65,30 @@
 <script>
     for (let i =0; i< ${product.getProductVariants().size()}; i++) {
         let id = '#variant' + i;
-        console.log(id);
         $(id).change(function() {
             this.style.color = "blue";
-            console.log(id);
-            console.log($(id).val());
             checkPrice(id);
-
         });
     }
 
     function checkPrice(id) {
         <c:forEach var="variants" items="${product.getProductVariantsValues()}" varStatus="index">
-            console.log('${variants.getVariantsValueName1()}' === $(id).val())
-            console.log($(id).val() +'id')
-            console.log('${variants.getVariantsValueName1()}' + 'product')
-            if ('${variants.getVariantsValueName1()}' === $(id).val()){
-            $('#price').html('$' + ${variants.getProductVariantsValuePrice()});
-                console.log($('#price').val() + 'price')
-                console.log(${variants.getProductVariantsValuePrice()} + 'setprice')
+            if ('${variants.getVariantsValueName1()}' === $(id).val() || '${variants.getVariantsValueName()}' === $(id).val()){
+                //check variant first
+                for (let i =0; i< ${product.getProductVariants().size()}; i++) {
+                    //check variant second
+                    let id1 = '#variant' + i;
+                    if (id1 === id) continue;
+                    console.log($(id1).val() + 'id1')
+                    console.log($(id).val() + 'id')
+                    console.log('${variants.getVariantsValueName()}')
+                    console.log('${variants.getVariantsValueName1()}')
+                    if ('${variants.getVariantsValueName()}' === $(id1).val() || '${variants.getVariantsValueName1()}' === $(id1).val()){
+                        $('#price').html('$' + ${variants.getProductVariantsValuePrice()});
+                        console.log($('#price').val() + 'price')
+                        console.log(${variants.getProductVariantsValuePrice()} + 'setprice')
+                    }
+                }
             }
         </c:forEach>
     }
